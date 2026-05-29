@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direção de Ensaios através do Cinema — Felipe Pick</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&family=Jost:wght@300;400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  background: #F2EAD8;
+  color: #1C1A14;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: 980px;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  filter: sepia(18%) contrast(1.06);
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(28,26,20,0.88) 0%,
+    rgba(28,26,20,0.62) 50%,
+    rgba(28,26,20,0.22) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 64px 24px 52px;
+  text-align: center;
+}
+
+.hero-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid rgba(196,169,106,0.45);
+  display: block;
+  margin: 0 auto 14px;
+  filter: sepia(18%) contrast(1.06);
+}
+
+.small-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(242,234,216,0.55);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1.05;
+  color: #F2EAD8;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 18px rgba(28,26,20,0.7);
+}
+
+.hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(242,234,216,0.65);
+  margin-bottom: 20px;
+  line-height: 1.4;
+  text-shadow: 0 1px 12px rgba(28,26,20,0.6);
+}
+
+.hero-meta {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(242,234,216,0.55);
+  margin-bottom: 0;
+  display: inline-block;
+  border: 0.5px solid rgba(242,234,216,0.22);
+  padding: 6px 14px;
+}
+
+.btn {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: #F2EAD8;
+  color: #1C1A14;
+  border: none;
+  padding: 14px 24px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.price {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(242,234,216,0.45);
+  margin-top: 14px;
+  margin-bottom: 18px;
+  display: block;
+}
+
+/* ─── SEÇÕES ─── */
+.section {
+  padding: 52px 24px;
+}
+
+.section-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8A7E6A;
+  display: block;
+  margin-bottom: 22px;
+  padding-bottom: 8px;
+  border-bottom: 0.5px solid #D5C9B4;
+}
+
+.display {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.1;
+  color: #1C1A14;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+.display-italic {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: #1C1A14;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.body {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #6B5E48;
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+.rule::before, .rule::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: #D5C9B4;
+}
+.rule-dot {
+  width: 3px;
+  height: 3px;
+  background: #8A7E6A;
+  border-radius: 50%;
+}
+
+.pull-quote {
+  border-left: 1.5px solid #C4B49A;
+  padding: 10px 14px;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: #3D2E1A;
+  line-height: 1.65;
+  margin: 22px 0;
+}
+
+/* ─── FOTOS ─── */
+.photo-full {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: sepia(12%) contrast(1.06);
+}
+
+.photo-trio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.photo-trio img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  filter: sepia(12%) contrast(1.06);
+}
+
+.photo-trio img.tall {
+  height: 382px;
+  grid-row: span 2;
+}
+
+/* ─── CHECKLIST ─── */
+.checklist {
+  list-style: none;
+  margin-top: 4px;
+}
+
+.checklist li {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #6B5E48;
+  padding: 13px 0 13px 18px;
+  border-bottom: 0.5px solid #D5C9B4;
+  position: relative;
+}
+
+.checklist li:first-child { border-top: 0.5px solid #D5C9B4; }
+
+.checklist li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #C4A96A;
+}
+
+/* ─── PILARES ─── */
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-top: 4px;
+}
+
+.pillar-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  font-style: italic;
+  color: #C4B49A;
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.pillar-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 300;
+  color: #1C1A14;
+  margin-bottom: 8px;
+}
+
+.pillar-body {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #6B5E48;
+  line-height: 1.8;
+}
+
+/* ─── PERFIL ─── */
+.profile {
+  background: #EDE4D0;
+  padding: 52px 24px;
+}
+
+.profile-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.profile-left {
+  margin-bottom: 24px;
+}
+
+.profile-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  filter: sepia(15%) contrast(1.05);
+  border: 0.5px solid #C4B49A;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.profile-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 300;
+  color: #1C1A14;
+  margin-bottom: 4px;
+}
+
+.profile-role {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8A7E6A;
+  display: block;
+}
+
+.profile-bio p {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #6B5E48;
+  margin-bottom: 14px;
+}
+
+.profile-bio .cresci {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: 300;
+  color: #3D2E1A;
+  display: block;
+  margin: 20px 0 0;
+  line-height: 1.3;
+}
+
+/* ─── CTA FINAL ─── */
+.cta {
+  background: #1C1A14;
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.cta-inner {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.cta .section-label {
+  color: rgba(242,234,216,0.35);
+  border-color: rgba(213,201,180,0.18);
+}
+
+.cta .display {
+  color: #F2EAD8;
+}
+
+.cta .rule::before, .cta .rule::after {
+  background: rgba(196,180,154,0.25);
+}
+
+.cta .body {
+  color: rgba(242,234,216,0.42);
+  font-size: 12px;
+}
+
+.btn-dark {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: #F2EAD8;
+  color: #1C1A14;
+  border: none;
+  padding: 14px 24px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-top: 28px;
+  text-align: center;
+}
+
+.price-value {
+  color: #C4A96A;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.cta .price {
+  color: rgba(242,234,216,0.3);
+}
+
+.cta .price-value {
+  color: #C4A96A;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  padding: 22px 24px;
+  text-align: center;
+  border-top: 0.5px solid #D5C9B4;
+}
+
+.footer span {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8A7E6A;
+}
+
+/* ─── TEXTURE RULE ─── */
+.texture-rule {
+  height: 1px;
+  background: repeating-linear-gradient(90deg, #C4B49A 0px, #C4B49A 1px, transparent 1px, transparent 6px);
+  opacity: 0.35;
+}
+
+/* ══════════════════════════════════════
+   DESKTOP — 768px+
+══════════════════════════════════════ */
+@media (min-width: 768px) {
+
+  /* HERO — desktop */
+  .hero { min-height: 720px; }
+
+  .hero-content {
+    padding: 96px 48px 80px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .hero-title { font-size: 72px; margin-bottom: 12px; }
+
+  .hero-sub { font-size: 24px; }
+
+  .hero-meta { margin-bottom: 36px; }
+
+  .btn {
+    display: inline-block;
+    width: auto;
+    padding: 15px 56px;
+  }
+
+  /* SECTIONS */
+  .section { padding: 88px 48px; }
+
+  .section-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .section-inner .section-label {
+    grid-column: 1 / -1;
+  }
+
+  .display { font-size: 52px; }
+  .display-italic { font-size: 42px; margin-bottom: 0; }
+  .pull-quote { font-size: 15px; }
+
+  /* PARA QUEM — seção com bg — não usa section-inner grid */
+  .section-para-quem .section-inner {
+    display: block;
+    max-width: 640px;
+  }
+
+  /* PHOTOS */
+  .photo-full { height: 520px; }
+
+  .photo-trio {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .photo-trio img {
+    height: 440px;
+  }
+
+  .photo-trio img.tall {
+    height: 440px;
+    grid-row: span 1;
+  }
+
+  /* PILLARS */
+  .pillars {
+    flex-direction: row;
+    gap: 56px;
+  }
+
+  .pillars > div { flex: 1; }
+
+  /* PROFILE */
+  .profile { padding: 88px 48px; }
+
+  .profile-inner {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 72px;
+    align-items: start;
+  }
+
+  .profile-left { margin-bottom: 0; }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+
+  .profile-name { font-size: 32px; }
+
+  .profile-bio p { font-size: 14px; }
+
+  .profile-bio .cresci { font-size: 26px; }
+
+  /* CTA */
+  .cta { padding: 112px 48px; }
+
+  .cta .display { font-size: 64px; }
+
+  .btn-dark {
+    display: inline-block;
+    width: auto;
+    padding: 15px 56px;
+    margin-top: 32px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="fotos/ensaio-7.jpg" alt="Ensaio fotográfico">
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <img class="hero-avatar" src="fotos/retrato-pick.jpg" alt="Felipe Pick">
+    <span class="small-label">Workshop ao vivo · <span style="color: #C4A96A;">9 de junho</span></span>
+    <h1 class="hero-title">Direção de Ensaios<br>através do Cinema</h1>
+    <p class="hero-sub">Dirigindo com confiança.</p>
+    <p class="hero-meta">terça-feira · 19h às 21h · vagas limitadas</p>
+    <span class="price">por apenas <span class="price-value">R$ 48</span></span>
+    <button class="btn">Quero dirigir com confiança</button>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="section">
+  <div class="section-inner">
+    <span class="section-label">Método</span>
+    <div>
+      <h2 class="display-italic">Sem Pinterest.<br>Sem copiar outros fotógrafos.</h2>
+    </div>
+    <div>
+      <div class="rule"><div class="rule-dot"></div></div>
+      <p class="body">Aprenda a dirigir ensaios com confiança sem ter que buscar referências no Pinterest ou no Instagram de outros fotógrafos.</p>
+      <div class="pull-quote">
+        "Usando o Cinema como principal referência — para você construir uma linguagem visual que é só sua."
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="texture-rule"></div>
+
+<!-- FOTO FULL BLEED -->
+<img class="photo-full" src="fotos/ensaio-10.jpg" alt="Ensaio fotográfico" style="object-position:center 25%;">
+
+<!-- PARA QUEM É -->
+<section class="section section-para-quem" style="background:#EDE4D0;">
+  <div class="section-inner">
+    <span class="section-label">Para quem é este workshop</span>
+    <h2 class="display-italic">Você está no lugar certo se...</h2>
+    <ul class="checklist">
+      <li>Usa com frequência referências de poses do Pinterest</li>
+      <li>Não sabe o que fazer quando "dá branco" no meio do ensaio</li>
+      <li>Sente que os clientes não correspondem ao que você pede</li>
+      <li>Não tem a segurança que gostaria pra dirigir os ensaios</li>
+      <li>Busca fazer fotos mais naturais e menos posadas</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PHOTO TRIO -->
+<div class="photo-trio">
+  <img class="tall" src="fotos/ensaio-11.jpg" alt="Ensaio Pick">
+  <img src="fotos/ensaio-12.jpg" alt="Ensaio Pick">
+  <img src="fotos/ensaio-13.jpg" alt="Ensaio Pick">
+</div>
+
+<!-- OS 2 PILARES -->
+<section class="section">
+  <div class="section-inner">
+    <span class="section-label">O que você vai aprender</span>
+    <div>
+      <h2 class="display">Os 2 pilares centrais<br>da Direção<br>de Ensaios</h2>
+    </div>
+    <div>
+      <div class="rule"><div class="rule-dot"></div></div>
+      <div class="pillars">
+        <div>
+          <span class="pillar-num">I — Confiança</span>
+          <div class="pillar-title">Chegar sabendo o que fazer.</div>
+          <p class="pillar-body">Se preparar da forma correta pra chegar no dia das fotos com confiança e sabendo o que fazer independente do cenário ou imprevistos.</p>
+        </div>
+        <div>
+          <span class="pillar-num">II — Conhecimento</span>
+          <div class="pillar-title">Entender seus clientes.</div>
+          <p class="pillar-body">Conhecer bem os clientes pra entender como deixá-los mais à vontade e propensos a corresponder ao que você pede.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="texture-rule"></div>
+
+<!-- FOTO FULL BLEED -->
+<img class="photo-full" src="fotos/ensaio-9.jpg" alt="Ensaio fotográfico">
+
+<!-- QUEM É -->
+<section class="profile">
+  <div class="profile-inner">
+    <div class="profile-left">
+      <img class="profile-img" src="fotos/retrato-pick.jpg" alt="Felipe Pick">
+      <div class="profile-name">Felipe Pick</div>
+      <span class="profile-role">Fotógrafo · Educador</span>
+    </div>
+    <div class="profile-right">
+      <div class="rule"><div class="rule-dot"></div></div>
+      <div class="profile-bio">
+        <p>Sou Felipe Pick, fotógrafo especializado em família, casamentos e ensaios.</p>
+        <p>Comecei como a maioria: melhorando técnica, trocando equipamento, tentando me destacar num mercado onde todo mundo parecia fazer a mesma coisa.</p>
+        <p>O ponto de virada veio quando entendi que o problema não era o que eu sabia fazer — era que o meu trabalho não tinha um olhar reconhecível. Não tinha identidade.</p>
+        <p>A partir daí, passei a construir coerência em tudo: na forma como fotografo, na forma como edito, na forma como atendo e na forma como me apresento. Quando esses quatro elementos passaram a falar a mesma língua, o mercado respondeu diferente.</p>
+        <span class="cresci">Cresci 7 anos<br>em apenas 7 meses.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta">
+  <div class="cta-inner">
+    <span class="section-label">Garanta sua vaga</span>
+    <h2 class="display">Vagas<br>Limitadas.</h2>
+    <div class="rule"><div class="rule-dot"></div></div>
+    <p class="body">9 de junho · terça-feira · 19h às 21h</p>
+    <button class="btn-dark">Quero dirigir com confiança</button>
+    <span class="price">por apenas <span class="price-value">R$ 48</span></span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span>© Felipe Pick · Direção de Ensaios através do Cinema</span>
+</footer>
+
+</body>
+</html>
