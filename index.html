@@ -21,693 +21,1385 @@
 <!-- End Meta Pixel Code -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preload" as="image" href="fotos/ensaio-7.jpg">
-<title>Direção de Ensaios através do Cinema — Felipe Pick</title>
+<link rel="preload" as="image" href="fotos/pick-foto.jpg">
+<title>Dirigir com Confiança — Gravação do Workshop | Felipe Pick</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&family=Jost:wght@300;400&display=swap');
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Jost', sans-serif;
-  font-weight: 300;
   background: #F2EAD8;
-  color: #1C1A14;
-}
-
-/* ─── HERO ─── */
-.hero {
-  position: relative;
-  min-height: 980px;
-  overflow: hidden;
-}
-
-.hero-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-  display: block;
-  filter: sepia(18%) contrast(1.06);
-}
-
-.hero-vignette {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg,
-    rgba(28,26,20,0.88) 0%,
-    rgba(28,26,20,0.62) 50%,
-    rgba(28,26,20,0.22) 100%);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 64px 24px 52px;
-  text-align: center;
-}
-
-.hero-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
-  border: 1px solid rgba(196,169,106,0.45);
-  display: block;
-  margin: 0 auto 14px;
-  filter: sepia(18%) contrast(1.06);
-}
-
-.small-label {
   font-family: 'Jost', sans-serif;
-  font-size: 8px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(242,234,216,0.55);
-  display: block;
-  margin-bottom: 12px;
-}
-
-.hero-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
   font-weight: 300;
-  line-height: 1.05;
-  color: #F2EAD8;
-  letter-spacing: 0.03em;
-  margin-bottom: 8px;
-  text-shadow: 0 2px 18px rgba(28,26,20,0.7);
-}
-
-.hero-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 18px;
-  font-weight: 300;
-  color: rgba(242,234,216,0.65);
-  margin-bottom: 20px;
-  line-height: 1.4;
-  text-shadow: 0 1px 12px rgba(28,26,20,0.6);
-}
-
-.hero-meta {
-  font-family: 'Jost', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(242,234,216,0.55);
-  margin-bottom: 0;
-  display: inline-block;
-  border: 0.5px solid rgba(242,234,216,0.22);
-  padding: 6px 14px;
-}
-
-.btn {
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  background: #F2EAD8;
   color: #1C1A14;
-  border: none;
-  padding: 14px 24px;
-  cursor: pointer;
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-
-.price {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 15px;
-  color: rgba(242,234,216,0.45);
-  margin-top: 14px;
-  margin-bottom: 18px;
-  display: block;
-}
-
-/* ─── SEÇÕES ─── */
-.section {
-  padding: 52px 24px;
-}
-
-.section-inner {
-  max-width: 920px;
+  max-width: 430px;
   margin: 0 auto;
 }
 
-.section-label {
-  font-family: 'Jost', sans-serif;
+/* ---- HERO FOTO ---- */
+.hero-photo {
+  position: relative;
+  height: 62vw;
+  min-height: 260px;
+  overflow: hidden;
+  background: #0d0c08;
+}
+
+.pick-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: brightness(0.82) contrast(1.04) saturate(0.8);
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(28,26,20,0.25) 0%,
+    rgba(28,26,20,0.0) 25%,
+    rgba(28,26,20,0.0) 50%,
+    rgba(28,26,20,0.7) 78%,
+    rgba(28,26,20,1) 100%
+  );
+}
+
+.hero-label {
+  position: absolute;
+  top: 20px;
+  left: 0; right: 0;
+  text-align: center;
   font-size: 9px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #8A7E6A;
-  display: block;
-  margin-bottom: 22px;
-  padding-bottom: 8px;
-  border-bottom: 0.5px solid #D5C9B4;
+  color: rgba(242,234,216,0.55);
+  font-weight: 400;
 }
 
-.display {
+.hero-bottom {
+  position: absolute;
+  bottom: 28px;
+  left: 24px; right: 24px;
+}
+
+.author-tag {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(242,234,216,0.45);
+  margin-bottom: 10px;
+}
+
+.author-tag span { color: #C4A96A; }
+
+.hero-headline {
   font-family: 'Cormorant Garamond', serif;
   font-size: 36px;
   font-weight: 300;
   line-height: 1.1;
-  color: #1C1A14;
-  letter-spacing: 0.02em;
-  margin-bottom: 20px;
+  color: #F2EAD8;
+  letter-spacing: 0.01em;
+  margin-bottom: 6px;
 }
 
-.display-italic {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
-  font-weight: 300;
+.hero-headline em {
   font-style: italic;
-  color: #1C1A14;
-  line-height: 1.2;
-  margin-bottom: 20px;
+  color: #fff;
 }
 
-.body {
-  font-family: 'Jost', sans-serif;
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.85;
-  color: #6B5E48;
+/* ---- CORPO ---- */
+.body-section {
+  background: #F2EAD8;
+  padding: 20px 24px 0;
+}
+
+.label-line {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8A7E6A;
+  font-weight: 400;
+  padding-bottom: 8px;
+  border-bottom: 0.5px solid #D5C9B4;
+  margin-bottom: 10px;
 }
 
 .rule {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: 24px 0;
+  gap: 10px;
+  margin: 10px 0;
 }
 .rule::before, .rule::after {
   content: '';
   flex: 1;
   height: 0.5px;
-  background: #D5C9B4;
+  background: #C4B49A;
 }
 .rule-dot {
-  width: 3px;
-  height: 3px;
+  width: 3px; height: 3px;
   background: #8A7E6A;
   border-radius: 50%;
 }
 
-.pull-quote {
-  border-left: 1.5px solid #C4B49A;
-  padding: 10px 14px;
-  font-family: 'IM Fell English', serif;
-  font-style: italic;
-  font-size: 14px;
-  color: #3D2E1A;
-  line-height: 1.65;
-  margin: 22px 0;
-}
-
-/* ─── FOTOS ─── */
-.photo-full {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  filter: sepia(12%) contrast(1.06);
-}
-
-.photo-trio {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-}
-
-.photo-trio img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  display: block;
-  filter: sepia(12%) contrast(1.06);
-}
-
-.photo-trio img.tall {
-  height: 382px;
-  grid-row: span 2;
-}
-
-/* ─── CHECKLIST ─── */
-.checklist {
-  list-style: none;
-  margin-top: 4px;
-}
-
-.checklist li {
-  font-family: 'Jost', sans-serif;
+.subheadline {
   font-size: 13px;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #6B5E48;
-  padding: 13px 0 13px 18px;
-  border-bottom: 0.5px solid #D5C9B4;
-  position: relative;
+  margin-bottom: 0;
 }
 
-.checklist li:first-child { border-top: 0.5px solid #D5C9B4; }
-
-.checklist li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: #C4A96A;
+/* ---- CTA ---- */
+.cta-section {
+  background: #F2EAD8;
+  padding: 16px 24px 24px;
 }
 
-/* ─── PILARES ─── */
-.pillars {
+.price-row {
   display: flex;
-  flex-direction: column;
-  gap: 36px;
-  margin-top: 4px;
-}
-
-.pillar-num {
-  font-family: 'Cormorant Garamond', serif;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
   font-size: 11px;
-  font-style: italic;
-  color: #C4B49A;
-  letter-spacing: 0.12em;
-  display: block;
-  margin-bottom: 6px;
-}
-
-.pillar-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
   font-weight: 300;
-  color: #1C1A14;
-  margin-bottom: 8px;
-}
-
-.pillar-body {
-  font-family: 'Jost', sans-serif;
-  font-size: 13px;
-  font-weight: 300;
-  color: #6B5E48;
-  line-height: 1.8;
-}
-
-/* ─── PERFIL ─── */
-.profile {
-  background: #EDE4D0;
-  padding: 52px 24px;
-}
-
-.profile-inner {
-  max-width: 920px;
-  margin: 0 auto;
-}
-
-.profile-left {
-  margin-bottom: 24px;
-}
-
-.profile-img {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
-  filter: sepia(15%) contrast(1.05);
-  border: 0.5px solid #C4B49A;
-  display: block;
-  margin-bottom: 16px;
-}
-
-.profile-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
-  font-weight: 300;
-  color: #1C1A14;
-  margin-bottom: 4px;
-}
-
-.profile-role {
-  font-family: 'Jost', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
   color: #8A7E6A;
-  display: block;
+  letter-spacing: 0.04em;
 }
 
-.profile-bio p {
-  font-family: 'Jost', sans-serif;
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.85;
-  color: #6B5E48;
-  margin-bottom: 14px;
+.price-old {
+  text-decoration: line-through;
+  color: #C4B49A;
 }
 
-.profile-bio .cresci {
+.price-new {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 300;
-  color: #3D2E1A;
+  color: #1C1A14;
+}
+
+.btn {
   display: block;
-  margin: 20px 0 0;
-  line-height: 1.3;
-}
-
-/* ─── CTA FINAL ─── */
-.cta {
+  width: 100%;
   background: #1C1A14;
-  padding: 56px 24px;
-  text-align: center;
-}
-
-.cta-inner {
-  max-width: 560px;
-  margin: 0 auto;
-}
-
-.cta .section-label {
-  color: rgba(242,234,216,0.35);
-  border-color: rgba(213,201,180,0.18);
-}
-
-.cta .display {
   color: #F2EAD8;
-}
-
-.cta .rule::before, .cta .rule::after {
-  background: rgba(196,180,154,0.25);
-}
-
-.cta .body {
-  color: rgba(242,234,216,0.42);
-  font-size: 12px;
-}
-
-.btn-dark {
   font-family: 'Jost', sans-serif;
+  font-size: 10.5px;
   font-weight: 400;
-  font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  background: #F2EAD8;
-  color: #1C1A14;
+  padding: 16px 20px;
   border: none;
-  padding: 14px 24px;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.mini-guarantee {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8A7E6A;
+  flex-wrap: wrap;
+}
+
+.mini-guarantee span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mini-guarantee .dot-gold {
+  width: 4px; height: 4px;
+  background: #C4A96A;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ---- TRUST BAR ---- */
+.trust-bar {
+  display: flex;
+  border-top: 0.5px solid #D5C9B4;
+  background: #EDE5D3;
+}
+
+.trust-item {
+  flex: 1;
+  padding: 12px 6px;
+  text-align: center;
+  font-size: 8.5px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8A7E6A;
+  border-right: 0.5px solid #D5C9B4;
+  line-height: 1.6;
+}
+
+.trust-item:last-child { border-right: none; }
+
+.trust-icon {
   display: block;
-  width: 100%;
-  margin-top: 28px;
-  text-align: center;
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: #C4A96A;
 }
 
-.price-value {
-  color: #C4A96A;
-  font-size: 20px;
+/* ---- DOBRA 2: DIAGNÓSTICO ---- */
+.dobra2 {
+  background: #EDE5D3;
+  padding: 48px 24px 40px;
+}
+
+.dobra2-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8A7E6A;
+  font-weight: 400;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dobra2-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: #C4B49A;
+}
+
+.dobra2-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 300;
   font-style: italic;
+  line-height: 1.1;
+  color: #1C1A14;
+  margin-bottom: 32px;
+  letter-spacing: 0.01em;
 }
 
-.cta .price {
-  color: rgba(242,234,216,0.3);
+.dor-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
-.cta .price-value {
-  color: #C4A96A;
+.dor-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 0.5px solid #D5C9B4;
 }
 
-/* ─── FOOTER ─── */
-.footer {
-  padding: 22px 24px;
-  text-align: center;
+.dor-item:first-child {
   border-top: 0.5px solid #D5C9B4;
 }
 
-.footer span {
-  font-family: 'Jost', sans-serif;
+.dor-marker {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 0.5px solid #C4A96A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.dor-marker-inner {
+  width: 6px;
+  height: 6px;
+  background: #C4A96A;
+}
+
+.dor-text {
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #3D2E1A;
+}
+
+.dor-text strong {
+  font-weight: 400;
+  color: #1C1A14;
+  letter-spacing: 0.01em;
+}
+
+.dor-text em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.dobra2-transition {
+  margin-top: 32px;
+  padding: 20px 0 0;
+  border-top: 0.5px solid #C4B49A;
+}
+
+.dobra2-transition p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #1C1A14;
+  text-align: center;
+}
+
+.dobra2-transition strong {
+  font-weight: 600;
+  font-style: normal;
+  color: #3D2E1A;
+}
+
+
+/* ---- DOBRA 3: O QUE VOCÊ VAI SABER ---- */
+.dobra3 {
+  background: #F2EAD8;
+  padding: 48px 24px 48px;
+}
+
+.dobra3-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8A7E6A;
+  font-weight: 400;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dobra3-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: #C4B49A;
+}
+
+.dobra3-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.12;
+  color: #1C1A14;
+  margin-bottom: 36px;
+  letter-spacing: 0.01em;
+}
+
+.dobra3-title em {
+  font-style: italic;
+}
+
+.saber-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.saber-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 0.5px solid #D5C9B4;
+  align-items: start;
+}
+
+.saber-item:first-child {
+  border-top: 0.5px solid #D5C9B4;
+}
+
+.saber-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 300;
+  color: #C4A96A;
+  line-height: 1;
+  padding-top: 2px;
+}
+
+.saber-text {
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #3D2E1A;
+}
+
+.saber-text strong {
+  font-weight: 400;
+  color: #1C1A14;
+}
+
+.saber-text em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+}
+
+
+/* ---- DOBRA 4: QUEM É FELIPE PICK ---- */
+.dobra4 {
+  background: #1C1A14;
+  padding: 48px 24px;
+}
+
+.dobra4-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8A7E6A;
+  font-weight: 400;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dobra4-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: #3D2E1A;
+}
+
+.dobra4-photo-block {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 24px;
+}
+
+.dobra4-photo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: brightness(0.9) contrast(1.05) saturate(0.75);
+}
+
+.dobra4-photo-border {
+  position: absolute;
+  inset: -4px;
+  border: 0.5px solid #C4A96A;
+  pointer-events: none;
+}
+
+.dobra4-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 300;
+  color: #F2EAD8;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+
+.dobra4-role {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8A7E6A;
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+
+.dobra4-rule {
+  height: 0.5px;
+  background: #3D2E1A;
+  margin-bottom: 28px;
+}
+
+.dobra4-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dobra4-p {
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #8A7E6A;
+}
+
+.dobra4-p strong {
+  color: #C4B49A;
+  font-weight: 400;
+}
+
+.dobra4-pullquote {
+  border-left: 1.5px solid #C4A96A;
+  padding: 4px 0 4px 16px;
+  margin-top: 8px;
+}
+
+.dobra4-pullquote p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #F2EAD8;
+}
+
+
+/* ---- DOBRA 5: DEPOIMENTOS ---- */
+.dobra5 {
+  background: #EDE5D3;
+  padding: 48px 24px;
+}
+
+.dobra5-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8A7E6A;
+  font-weight: 400;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dobra5-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: #C4B49A;
+}
+
+.dobra5-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.1;
+  color: #1C1A14;
+  margin-bottom: 36px;
+  letter-spacing: 0.01em;
+}
+
+.dep-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dep-card {
+  background: #F2EAD8;
+  border: 0.5px solid #D5C9B4;
+  padding: 0;
+  overflow: hidden;
+}
+
+.dep-screenshot {
+  width: 100%;
+  display: block;
+  border-bottom: 0.5px solid #D5C9B4;
+}
+
+.dep-meta {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dep-name {
   font-size: 9px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #8A7E6A;
+  font-weight: 400;
 }
 
-/* ─── TEXTURE RULE ─── */
-.texture-rule {
-  height: 1px;
-  background: repeating-linear-gradient(90deg, #C4B49A 0px, #C4B49A 1px, transparent 1px, transparent 6px);
-  opacity: 0.35;
+.dep-highlight {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 11px;
+  color: #C4A96A;
+  text-align: right;
+  max-width: 140px;
+  line-height: 1.4;
 }
 
-/* ══════════════════════════════════════
-   DESKTOP — 768px+
-══════════════════════════════════════ */
-@media (min-width: 768px) {
 
-  /* HERO — desktop */
-  .hero { min-height: 720px; }
-
-  .hero-content {
-    padding: 96px 48px 80px;
-    max-width: 680px;
-    margin: 0 auto;
-  }
-
-  .hero-title { font-size: 72px; margin-bottom: 12px; }
-
-  .hero-sub { font-size: 24px; }
-
-  .hero-meta { margin-bottom: 36px; }
-
-  .btn {
-    display: inline-block;
-    width: auto;
-    padding: 15px 56px;
-  }
-
-  /* SECTIONS */
-  .section { padding: 88px 48px; }
-
-  .section-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: start;
-  }
-
-  .section-inner .section-label {
-    grid-column: 1 / -1;
-  }
-
-  .display { font-size: 52px; }
-  .display-italic { font-size: 42px; margin-bottom: 0; }
-  .pull-quote { font-size: 15px; }
-
-  /* PARA QUEM — seção com bg — não usa section-inner grid */
-  .section-para-quem .section-inner {
-    display: block;
-    max-width: 640px;
-  }
-
-  /* PHOTOS */
-  .photo-full { height: 520px; }
-
-  .photo-trio {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .photo-trio img {
-    height: 440px;
-  }
-
-  .photo-trio img.tall {
-    height: 440px;
-    grid-row: span 1;
-  }
-
-  /* PILLARS */
-  .pillars {
-    flex-direction: row;
-    gap: 56px;
-  }
-
-  .pillars > div { flex: 1; }
-
-  /* PROFILE */
-  .profile { padding: 88px 48px; }
-
-  .profile-inner {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 72px;
-    align-items: start;
-  }
-
-  .profile-left { margin-bottom: 0; }
-
-  .profile-img {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 20px;
-  }
-
-  .profile-name { font-size: 32px; }
-
-  .profile-bio p { font-size: 14px; }
-
-  .profile-bio .cresci { font-size: 26px; }
-
-  /* CTA */
-  .cta { padding: 112px 48px; }
-
-  .cta .display { font-size: 64px; }
-
-  .btn-dark {
-    display: inline-block;
-    width: auto;
-    padding: 15px 56px;
-    margin-top: 32px;
-  }
+/* ---- DOBRA 6: OFERTA ---- */
+.dobra6 {
+  background: #1C1A14;
+  padding: 48px 24px;
 }
+
+.dobra6-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8A7E6A;
+  font-weight: 400;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dobra6-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: #3D2E1A;
+}
+
+.dobra6-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.1;
+  color: #F2EAD8;
+  margin-bottom: 32px;
+}
+
+.recebe-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 32px;
+}
+
+.recebe-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 15px 0;
+  border-bottom: 0.5px solid #2C2820;
+}
+
+.recebe-item:first-child {
+  border-top: 0.5px solid #2C2820;
+}
+
+.recebe-marker {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border: 0.5px solid #C4A96A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
+}
+
+.recebe-marker-inner {
+  width: 5px;
+  height: 5px;
+  background: #C4A96A;
+}
+
+.recebe-text {
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #8A7E6A;
+}
+
+.recebe-text strong {
+  color: #C4B49A;
+  font-weight: 400;
+}
+
+.bonus-tag {
+  display: inline-block;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #C4A96A;
+  border: 0.5px solid #C4A96A;
+  padding: 2px 7px;
+  margin-right: 6px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+/* Divisor antes do preço */
+.dobra6-rule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.dobra6-rule::before, .dobra6-rule::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: #3D2E1A;
+}
+
+.dobra6-rule-dot {
+  width: 3px;
+  height: 3px;
+  background: #C4A96A;
+  border-radius: 50%;
+}
+
+/* Bloco de preço */
+.price-block {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.price-context {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6B5E48;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.price-old-big {
+  font-size: 13px;
+  font-weight: 300;
+  color: #6B5E48;
+  text-decoration: line-through;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.price-new-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 300;
+  font-style: italic;
+  color: #F2EAD8;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.price-new-big span {
+  font-size: 22px;
+  vertical-align: super;
+  font-style: normal;
+}
+
+/* CTA */
+.dobra6-btn {
+  display: block;
+  width: 100%;
+  background: #C4A96A;
+  color: #1C1A14;
+  font-family: 'Jost', sans-serif;
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.dobra6-mini-guarantee {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6B5E48;
+  flex-wrap: wrap;
+}
+
+.dobra6-mini-guarantee span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dobra6-dot {
+  width: 3px;
+  height: 3px;
+  background: #C4A96A;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+/* ---- DOBRA 7: GARANTIA ---- */
+.dobra7 {
+  background: #F2EAD8;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.dobra7-icon {
+  width: 48px;
+  height: 48px;
+  border: 0.5px solid #C4A96A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.dobra7-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.dobra7-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8A7E6A;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.dobra7-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.1;
+  color: #1C1A14;
+  margin-bottom: 20px;
+}
+
+.dobra7-rule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.dobra7-rule::before, .dobra7-rule::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: #C4B49A;
+}
+.dobra7-rule-dot {
+  width: 3px; height: 3px;
+  background: #8A7E6A;
+  border-radius: 50%;
+}
+
+.dobra7-body {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #6B5E48;
+  text-align: center;
+}
+
+.dobra7-body strong {
+  color: #1C1A14;
+  font-weight: 400;
+}
+
+
+/* ---- DOBRA 8: FECHAMENTO ---- */
+.dobra8 {
+  background: #1C1A14;
+  padding: 56px 24px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dobra8-texture {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(196,169,106,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.dobra8-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6B5E48;
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+
+.dobra8-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.18;
+  color: #F2EAD8;
+  margin-bottom: 28px;
+  letter-spacing: 0.01em;
+}
+
+.dobra8-title em {
+  font-style: italic;
+  color: #C4B49A;
+}
+
+.dobra8-rule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.dobra8-rule::before, .dobra8-rule::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: #3D2E1A;
+}
+.dobra8-rule-dot {
+  width: 3px; height: 3px;
+  background: #C4A96A;
+  border-radius: 50%;
+}
+
+.dobra8-body {
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #6B5E48;
+  margin-bottom: 12px;
+}
+
+.dobra8-body strong {
+  color: #C4B49A;
+  font-weight: 400;
+}
+
+.dobra8-urgency {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: #8A7E6A;
+  margin-bottom: 36px;
+}
+
+.dobra8-price-row {
+  margin-bottom: 20px;
+}
+
+.dobra8-price-old {
+  font-size: 12px;
+  font-weight: 300;
+  color: #6B5E48;
+  text-decoration: line-through;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.dobra8-price-new {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 300;
+  font-style: italic;
+  color: #F2EAD8;
+  line-height: 1;
+}
+
+.dobra8-price-new span {
+  font-size: 22px;
+  vertical-align: super;
+  font-style: normal;
+}
+
+.dobra8-btn {
+  display: block;
+  width: 100%;
+  background: #C4A96A;
+  color: #1C1A14;
+  font-family: 'Jost', sans-serif;
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 17px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+
+.dobra8-guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6B5E48;
+  flex-wrap: wrap;
+}
+
+.dobra8-guarantee span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dobra8-gdot {
+  width: 3px; height: 3px;
+  background: #C4A96A;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Footer */
+.page-footer {
+  background: #0f0d0a;
+  padding: 20px 24px;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #3D2E1A;
+  font-weight: 400;
+  border-top: 0.5px solid #2C2820;
+}
+
 </style>
-<script async src="https://tally.so/widgets/embed.js"></script>
 </head>
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <img class="hero-img" src="fotos/ensaio-7.jpg" alt="Ensaio fotográfico">
-  <div class="hero-vignette"></div>
-  <div class="hero-content">
-    <img class="hero-avatar" src="fotos/retrato-pick.jpg" alt="Felipe Pick">
-    <span class="small-label">Workshop ao vivo · <span style="color: #C4A96A;">9 de junho</span></span>
-    <h1 class="hero-title">Direção de Ensaios<br>através do Cinema</h1>
-    <p class="hero-sub">Dirigindo com confiança.</p>
-    <p class="hero-meta">terça-feira · 19h às 21h · vagas limitadas</p>
-    <span class="price">por apenas <span class="price-value">R$ 48</span></span>
-    <button class="btn" data-tally-open="Bz0GJK" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" data-tally-form-events-forwarding="1">Quero dirigir com confiança</button>
+<!-- DOBRA 1 -->
+<section class="hero-photo">
+  <img class="pick-img" src="fotos/pick-foto.jpg" alt="Felipe Pick fotógrafo">
+  <div class="vignette"></div>
+
+  <div class="hero-label">Para fotógrafos que travam na hora de dirigir o cliente</div>
+
+  <div class="hero-bottom">
+    <div class="author-tag">Felipe Pick <span>Fotógrafo · Educador</span></div>
+    <h1 class="hero-headline">Pare de tentar dirigir poses.<br><em>Aprenda a direcionar pessoas.</em></h1>
   </div>
 </section>
 
-<!-- MÉTODO -->
-<section class="section">
-  <div class="section-inner">
-    <span class="section-label">Método</span>
-    <div>
-      <h2 class="display-italic">Sem Pinterest.<br>Sem copiar outros fotógrafos.</h2>
-    </div>
-    <div>
-      <div class="rule"><div class="rule-dot"></div></div>
-      <p class="body">Aprenda a dirigir ensaios com confiança sem ter que buscar referências no Pinterest ou no Instagram de outros fotógrafos.</p>
-      <div class="pull-quote">
-        "Usando o Cinema como principal referência — para você construir uma linguagem visual que é só sua."
-      </div>
-    </div>
+<section class="body-section">
+  <div class="label-line">Workshop gravado · Acesso imediato</div>
+  <div class="rule"><div class="rule-dot"></div></div>
+  <p class="subheadline">Workshop gravado de 2h com o método, os direcionamentos e as frases exatas que o Felipe usa nos seus ensaios cinematográficos.</p>
+</section>
+
+<section class="cta-section">
+  <div class="price-row">
+    <span class="price-old">de R$ 197</span>
+    <span class="price-new">por apenas R$ 48</span>
+  </div>
+  <button class="btn" data-tally-open="Bz0GJK" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" data-tally-form-events-forwarding="1">Quero acessar agora por R$&nbsp;48</button>
+  <div class="mini-guarantee">
+    <span><span class="dot-gold"></span> Garantia 7 dias</span>
+    <span><span class="dot-gold"></span> Acesso imediato</span>
+    <span><span class="dot-gold"></span> Vitalício</span>
   </div>
 </section>
 
-<div class="texture-rule"></div>
-
-<!-- FOTO FULL BLEED -->
-<img class="photo-full" src="fotos/ensaio-10.jpg" alt="Ensaio fotográfico" style="object-position:center 25%;" loading="lazy">
-
-<!-- PARA QUEM É -->
-<section class="section section-para-quem" style="background:#EDE4D0;">
-  <div class="section-inner">
-    <span class="section-label">Para quem é este workshop</span>
-    <h2 class="display-italic">Você está no lugar certo se...</h2>
-    <ul class="checklist">
-      <li>Usa com frequência referências de poses do Pinterest</li>
-      <li>Não sabe o que fazer quando "dá branco" no meio do ensaio</li>
-      <li>Sente que os clientes não correspondem ao que você pede</li>
-      <li>Não tem a segurança que gostaria pra dirigir os ensaios</li>
-      <li>Busca fazer fotos mais naturais e menos posadas</li>
-    </ul>
+<div class="trust-bar">
+  <div class="trust-item">
+    <span class="trust-icon">▶</span>
+    Workshop 2h
   </div>
-</section>
-
-<!-- PHOTO TRIO -->
-<div class="photo-trio">
-  <img class="tall" src="fotos/ensaio-11.jpg" alt="Ensaio Pick" loading="lazy">
-  <img src="fotos/ensaio-12.jpg" alt="Ensaio Pick" loading="lazy">
-  <img src="fotos/ensaio-13.jpg" alt="Ensaio Pick" loading="lazy">
+  <div class="trust-item">
+    <span class="trust-icon">✦</span>
+    Garantia 7 dias
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">∞</span>
+    Acesso vitalício
+  </div>
 </div>
 
-<!-- OS 2 PILARES -->
-<section class="section">
-  <div class="section-inner">
-    <span class="section-label">O que você vai aprender</span>
-    <div>
-      <h2 class="display">Os 2 pilares centrais<br>da Direção<br>de Ensaios</h2>
+<!-- DOBRA 2: DIAGNÓSTICO -->
+<section class="dobra2">
+
+  <div class="dobra2-eyebrow">Diagnóstico</div>
+
+  <h2 class="dobra2-title">Isso te soa<br>familiar?</h2>
+
+  <ul class="dor-list">
+    <li class="dor-item">
+      <div class="dor-marker"><div class="dor-marker-inner"></div></div>
+      <span class="dor-text">Você chega no ensaio animado, mas <strong>na hora H trava</strong> e não sabe o que mandar o cliente fazer?</span>
+    </li>
+    <li class="dor-item">
+      <div class="dor-marker"><div class="dor-marker-inner"></div></div>
+      <span class="dor-text">Você olha as fotos depois e sente que ficaram <em><strong>"sem vida"</strong></em> poses engessadas, expressões forçadas?</span>
+    </li>
+    <li class="dor-item">
+      <div class="dor-marker"><div class="dor-marker-inner"></div></div>
+      <span class="dor-text">Você fica repetindo <strong>sempre as mesmas 3 posições</strong> porque não sabe como variar?</span>
+    </li>
+    <li class="dor-item">
+      <div class="dor-marker"><div class="dor-marker-inner"></div></div>
+      <span class="dor-text">Você sente que <strong>falta autoridade</strong> na hora de conduzir e o cliente percebe isso?</span>
+    </li>
+    <li class="dor-item">
+      <div class="dor-marker"><div class="dor-marker-inner"></div></div>
+      <span class="dor-text">Você já pensou que o problema é a câmera, o local ou a luz... mas no fundo sabe que <em><strong>é a direção?</strong></em></span>
+    </li>
+    <li class="dor-item">
+      <div class="dor-marker"><div class="dor-marker-inner"></div></div>
+      <span class="dor-text">Você fica <strong>falando tanto durante o ensaio</strong> que no final percebe que não sobrou espaço para nenhum momento real acontecer?</span>
+    </li>
+  </ul>
+
+  <div class="dobra2-transition">
+    <p>Se você marcou pelo menos uma dessas situações,<br><strong>esse workshop foi feito pra você.</strong></p>
+  </div>
+
+</section>
+
+
+<!-- DOBRA 3: O QUE VOCÊ VAI SABER -->
+<section class="dobra3">
+
+  <div class="dobra3-eyebrow">O que você vai aprender</div>
+
+  <h2 class="dobra3-title">Depois desse workshop<br>você vai <em>saber:</em></h2>
+
+  <ul class="saber-list">
+    <li class="saber-item">
+      <span class="saber-num">1</span>
+      <span class="saber-text">Como <strong>se preparar antes do ensaio</strong> para chegar com um plano na cabeça e transmitir segurança desde o primeiro contato</span>
+    </li>
+    <li class="saber-item">
+      <span class="saber-num">2</span>
+      <span class="saber-text">Como <strong>quebrar o gelo nos primeiros minutos</strong> e deixar o cliente à vontade de um jeito que muda completamente as expressões nas fotos</span>
+    </li>
+    <li class="saber-item">
+      <span class="saber-num">3</span>
+      <span class="saber-text">A diferença entre <strong>dirigir poses e direcionar pessoas</strong>, e por que essa mudança de mentalidade transforma os seus resultados</span>
+    </li>
+    <li class="saber-item">
+      <span class="saber-num">4</span>
+      <span class="saber-text">Como <strong>criar cenas em vez de fotos</strong>, usando a história e a vida do próprio cliente como inspiração</span>
+    </li>
+    <li class="saber-item">
+      <span class="saber-num">5</span>
+      <span class="saber-text"><strong>Frases e direcionamentos prontos</strong> para usar em diferentes momentos do ensaio, sem travar e sem repetir sempre as mesmas 3 poses</span>
+    </li>
+    <li class="saber-item">
+      <span class="saber-num">6</span>
+      <span class="saber-text">Como <strong>conduzir o ensaio quase sem falar</strong>, deixando espaço para momentos reais acontecerem</span>
+    </li>
+  </ul>
+
+</section>
+
+
+<!-- DOBRA 4: QUEM É FELIPE PICK -->
+<section class="dobra4">
+
+  <div class="dobra4-eyebrow">O professor</div>
+
+  <div class="dobra4-photo-block">
+    <img class="dobra4-photo" src="fotos/pick-foto.jpg" alt="Felipe Pick" loading="lazy">
+    <div class="dobra4-photo-border"></div>
+  </div>
+
+  <div class="dobra4-name">Felipe Pick</div>
+  <div class="dobra4-role">Fotógrafo · Educador</div>
+
+  <div class="dobra4-rule"></div>
+
+  <div class="dobra4-body">
+    <p class="dobra4-p">Tenho 24 anos e sou fotógrafo especializado em <strong>ensaios de casal, família e casamentos com identidade cinematográfica.</strong></p>
+    <p class="dobra4-p">Desde pequeno assistia até 3 filmes por dia. Quando comecei a fotografar, fui naturalmente levando as técnicas e a linguagem do cinema para os meus ensaios, até que as pessoas começaram a falar que as minhas fotos <strong>pareciam cenas de filme.</strong></p>
+    <p class="dobra4-p">Foi a partir daí que desenvolvi minha forma de trabalhar: <strong>não dirigir poses, mas direcionar pessoas.</strong> Criar cenas em vez de fotos. Deixar os clientes viverem um momento real enquanto eu registro.</p>
+
+    <div class="dobra4-pullquote">
+      <p>No workshop Dirigir com Confiança, compartilhei exatamente o método que uso nos meus próprios ensaios.</p>
     </div>
-    <div>
-      <div class="rule"><div class="rule-dot"></div></div>
-      <div class="pillars">
-        <div>
-          <span class="pillar-num">I — Confiança</span>
-          <div class="pillar-title">Chegar sabendo o que fazer.</div>
-          <p class="pillar-body">Se preparar da forma correta pra chegar no dia das fotos com confiança e sabendo o que fazer independente do cenário ou imprevistos.</p>
-        </div>
-        <div>
-          <span class="pillar-num">II — Conhecimento</span>
-          <div class="pillar-title">Entender seus clientes.</div>
-          <p class="pillar-body">Conhecer bem os clientes pra entender como deixá-los mais à vontade e propensos a corresponder ao que você pede.</p>
-        </div>
+  </div>
+
+</section>
+
+
+<!-- DOBRA 5: DEPOIMENTOS -->
+<section class="dobra5">
+
+  <div class="dobra5-eyebrow">Depoimentos</div>
+  <h2 class="dobra5-title">O que quem<br>participou disse</h2>
+
+  <div class="dep-list">
+
+    <div class="dep-card">
+      <img class="dep-screenshot" src="fotos/depoimento-rosiane.png" alt="Depoimento Rôsiane Carvalho" loading="lazy">
+      <div class="dep-meta">
+        <span class="dep-name">Rôsiane Carvalho</span>
+        <span class="dep-highlight">um novo mundo para mim</span>
       </div>
     </div>
-  </div>
-</section>
 
-<div class="texture-rule"></div>
-
-<!-- FOTO FULL BLEED -->
-<img class="photo-full" src="fotos/ensaio-9.jpg" alt="Ensaio fotográfico" loading="lazy">
-
-<!-- QUEM É -->
-<section class="profile">
-  <div class="profile-inner">
-    <div class="profile-left">
-      <img class="profile-img" src="fotos/retrato-pick.jpg" alt="Felipe Pick" loading="lazy">
-      <div class="profile-name">Felipe Pick</div>
-      <span class="profile-role">Fotógrafo · Educador</span>
-    </div>
-    <div class="profile-right">
-      <div class="rule"><div class="rule-dot"></div></div>
-      <div class="profile-bio">
-        <p>Sou Felipe Pick, fotógrafo especializado em família, casamentos e ensaios.</p>
-        <p>Comecei como a maioria: melhorando técnica, trocando equipamento, tentando me destacar num mercado onde todo mundo parecia fazer a mesma coisa.</p>
-        <p>O ponto de virada veio quando entendi que o problema não era o que eu sabia fazer — era que o meu trabalho não tinha um olhar reconhecível. Não tinha identidade.</p>
-        <p>A partir daí, passei a construir coerência em tudo: na forma como fotografo, na forma como edito, na forma como atendo e na forma como me apresento. Quando esses quatro elementos passaram a falar a mesma língua, o mercado respondeu diferente.</p>
-        <span class="cresci">Cresci 7 anos<br>em apenas 7 meses.</span>
+    <div class="dep-card">
+      <img class="dep-screenshot" src="fotos/depoimento-debora.png" alt="Depoimento Débora Teixeira" loading="lazy">
+      <div class="dep-meta">
+        <span class="dep-name">Débora Teixeira</span>
+        <span class="dep-highlight">cada vez mais me encanta</span>
       </div>
     </div>
+
+    <div class="dep-card">
+      <img class="dep-screenshot" src="fotos/depoimento-patricia.png" alt="Depoimento Patrícia Zacheo" loading="lazy">
+      <div class="dep-meta">
+        <span class="dep-name">Patrícia Zacheo</span>
+        <span class="dep-highlight">hoje foi meu primeiro workshop</span>
+      </div>
+    </div>
+
+    <div class="dep-card">
+      <img class="dep-screenshot" src="fotos/depoimento-fernanda.png" alt="Depoimento Fernanda Costa" loading="lazy">
+      <div class="dep-meta">
+        <span class="dep-name">Fernanda Costa</span>
+        <span class="dep-highlight">fazendo muito sentido</span>
+      </div>
+    </div>
+
   </div>
+
 </section>
 
-<!-- CTA FINAL -->
-<section class="cta">
-  <div class="cta-inner">
-    <span class="section-label">Garanta sua vaga</span>
-    <h2 class="display">Vagas<br>Limitadas.</h2>
-    <div class="rule"><div class="rule-dot"></div></div>
-    <p class="body">9 de junho · terça-feira · 19h às 21h</p>
-    <button class="btn-dark" data-tally-open="Bz0GJK" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" data-tally-form-events-forwarding="1">Quero dirigir com confiança</button>
-    <span class="price">por apenas <span class="price-value">R$ 48</span></span>
+
+<!-- DOBRA 6: O QUE VOCÊ RECEBE + OFERTA -->
+<section class="dobra6">
+
+  <div class="dobra6-eyebrow">A oferta</div>
+  <h2 class="dobra6-title">O que você recebe</h2>
+
+  <ul class="recebe-list">
+    <li class="recebe-item">
+      <div class="recebe-marker"><div class="recebe-marker-inner"></div></div>
+      <span class="recebe-text"><strong>Acesso imediato</strong> à gravação completa do workshop Dirigir com Confiança</span>
+    </li>
+    <li class="recebe-item">
+      <div class="recebe-marker"><div class="recebe-marker-inner"></div></div>
+      <span class="recebe-text"><strong>2 horas de conteúdo prático</strong> com o método que o Felipe usa nos seus próprios ensaios</span>
+    </li>
+    <li class="recebe-item">
+      <div class="recebe-marker"><div class="recebe-marker-inner"></div></div>
+      <span class="recebe-text">Os <strong>direcionamentos e frases prontas</strong> para usar no seu próximo ensaio</span>
+    </li>
+    <li class="recebe-item">
+      <div class="recebe-marker"><div class="recebe-marker-inner"></div></div>
+      <span class="recebe-text"><strong>Acesso vitalício</strong> para assistir quando e quantas vezes quiser</span>
+    </li>
+    <li class="recebe-item">
+      <div class="recebe-marker"><div class="recebe-marker-inner"></div></div>
+      <span class="recebe-text"><span class="bonus-tag">Bônus 1</span> Modelo de <strong>Moodboard</strong> para você replicar com seus clientes antes do ensaio</span>
+    </li>
+    <li class="recebe-item">
+      <div class="recebe-marker"><div class="recebe-marker-inner"></div></div>
+      <span class="recebe-text"><span class="bonus-tag">Bônus 2</span> Gravação de um <strong>ensaio real do Felipe Pick</strong> para você ver o método na prática</span>
+    </li>
+  </ul>
+
+  <div class="dobra6-rule"><div class="dobra6-rule-dot"></div></div>
+
+  <div class="price-block">
+    <div class="price-context">Investimento</div>
+    <span class="price-old-big">de R$ 197</span>
+    <div class="price-new-big"><span>R$</span> 48</div>
   </div>
+
+  <button class="dobra6-btn" data-tally-open="Bz0GJK" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" data-tally-form-events-forwarding="1">Quero acessar agora por R$&nbsp;48</button>
+
+  <div class="dobra6-mini-guarantee">
+    <span><span class="dobra6-dot"></span> Garantia 7 dias</span>
+    <span><span class="dobra6-dot"></span> Acesso imediato</span>
+    <span><span class="dobra6-dot"></span> Vitalício</span>
+  </div>
+
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <span>© Felipe Pick · Direção de Ensaios através do Cinema</span>
+
+<!-- DOBRA 7: GARANTIA -->
+<section class="dobra7">
+
+  <div class="dobra7-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#C4A96A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2l2.4 4.8 5.3.8-3.8 3.7.9 5.2L12 14l-4.8 2.5.9-5.2L4.3 7.6l5.3-.8z"/>
+    </svg>
+  </div>
+
+  <div class="dobra7-eyebrow">Risco zero</div>
+  <h2 class="dobra7-title">Risco zero para você</h2>
+  <div class="dobra7-rule"><div class="dobra7-rule-dot"></div></div>
+
+  <p class="dobra7-body">Se você assistir o workshop e sentir que o conteúdo <strong>não valeu o investimento</strong>, basta me chamar em até <strong>7 dias</strong> e eu devolvo o seu dinheiro.<br><br>Sem perguntas, sem burocracia.</p>
+
+</section>
+
+
+<!-- DOBRA 8: FECHAMENTO + CTA FINAL -->
+<section class="dobra8">
+  <div class="dobra8-texture"></div>
+
+  <div class="dobra8-eyebrow">Acesse agora</div>
+
+  <h2 class="dobra8-title">Você chegou até aqui porque sabe que precisa melhorar sua <em>direção de ensaios.</em></h2>
+
+  <div class="dobra8-rule"><div class="dobra8-rule-dot"></div></div>
+
+  <p class="dobra8-body">A diferença entre fotógrafos que travam e fotógrafos que conduzem com segurança <strong>não é talento. É método.</strong></p>
+
+  <p class="dobra8-body">Por R$48 você acessa o workshop completo, os bônus e as frases prontas para usar no seu próximo ensaio.</p>
+
+  <p class="dobra8-urgency">O preço de lançamento não vai durar para sempre.</p>
+
+  <div class="dobra8-price-row">
+    <span class="dobra8-price-old">de R$ 197</span>
+    <div class="dobra8-price-new"><span>R$</span> 48</div>
+  </div>
+
+  <button class="dobra8-btn" data-tally-open="Bz0GJK" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" data-tally-form-events-forwarding="1">Quero acessar agora por R$&nbsp;48</button>
+
+  <div class="dobra8-guarantee">
+    <span><span class="dobra8-gdot"></span> Garantia 7 dias</span>
+    <span><span class="dobra8-gdot"></span> Acesso imediato</span>
+    <span><span class="dobra8-gdot"></span> Vitalício</span>
+  </div>
+
+</section>
+
+<footer class="page-footer">
+  © Felipe Pick · Dirigir com Confiança
 </footer>
 
+<script async src="https://tally.so/widgets/embed.js"></script>
 </body>
 </html>
