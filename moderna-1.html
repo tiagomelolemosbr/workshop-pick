@@ -769,7 +769,7 @@ section { padding: 48px 20px; }
   </div>
 
   <div class="mockup-card">
-    <video class="mockup-video" id="hero-video" poster="fotos/ensaio-14.jpg" muted playsinline preload="auto"
+    <video class="mockup-video" id="hero-video" poster="fotos/ensaio-14.jpg" muted playsinline webkit-playsinline preload="auto" autoplay
       data-sources="fotos/video/hero-take-2.mp4,fotos/video/hero-take-4.mp4,fotos/video/hero-take-3.mp4,fotos/video/hero-take-5.mp4,fotos/video/hero-take-6.mp4"></video>
     <div class="mockup-overlay"></div>
     <div class="mockup-caption">
@@ -1130,9 +1130,13 @@ section { padding: 48px 20px; }
     video.src = sources[i];
     video.load();
   }
-  video.addEventListener('loadeddata', function () {
+  function tryPlay() {
+    var p = video.play();
+    if (p && p.catch) p.catch(function () {});
+  }
+  video.addEventListener('loadeddata', tryPlay);
+  video.addEventListener('playing', function () {
     video.classList.add('is-visible');
-    video.play().catch(function () {});
   });
   video.addEventListener('ended', function () {
     idx = (idx + 1) % sources.length;
@@ -1143,6 +1147,15 @@ section { padding: 48px 20px; }
     if (idx !== 0) loadClip(idx);
   });
   loadClip(idx);
+
+  // Fallback: some mobile browsers block the initial autoplay attempt.
+  // Retry playback on the first user interaction with the page.
+  var resumeEvents = ['touchstart', 'click', 'scroll'];
+  function resumeOnInteraction() {
+    if (video.paused) tryPlay();
+    resumeEvents.forEach(function (evt) { document.removeEventListener(evt, resumeOnInteraction); });
+  }
+  resumeEvents.forEach(function (evt) { document.addEventListener(evt, resumeOnInteraction, { passive: true, once: true }); });
 })();
 
 (function () {
