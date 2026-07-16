@@ -183,20 +183,16 @@ section { padding: 48px 20px; }
   object-position: center 30%;
   filter: brightness(0.8) contrast(1.08) saturate(0.9);
 }
-.mockup-video-stack {
-  position: relative;
-  width: 100%; height: 100%;
-}
-.mockup-video-stack video {
-  position: absolute; inset: 0;
+.mockup-video {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
+  background: var(--dark-2);
   opacity: 0;
-  transition: opacity 0.7s ease;
+  transition: opacity 0.4s ease;
   filter: brightness(0.85) contrast(1.05) saturate(0.9);
 }
-.mockup-video-stack video.active { opacity: 1; z-index: 1; }
+.mockup-video.is-visible { opacity: 1; }
 .mockup-overlay {
   position: absolute;
   inset: 0;
@@ -773,13 +769,8 @@ section { padding: 48px 20px; }
   </div>
 
   <div class="mockup-card">
-    <div class="mockup-video-stack">
-      <video src="fotos/video/hero-take-2.mp4" muted playsinline class="active"></video>
-      <video src="fotos/video/hero-take-4.mp4" muted playsinline></video>
-      <video src="fotos/video/hero-take-3.mp4" muted playsinline></video>
-      <video src="fotos/video/hero-take-5.mp4" muted playsinline></video>
-      <video src="fotos/video/hero-take-6.mp4" muted playsinline></video>
-    </div>
+    <video class="mockup-video" id="hero-video" poster="fotos/ensaio-14.jpg" muted playsinline preload="auto"
+      data-sources="fotos/video/hero-take-2.mp4,fotos/video/hero-take-4.mp4,fotos/video/hero-take-3.mp4,fotos/video/hero-take-5.mp4,fotos/video/hero-take-6.mp4"></video>
     <div class="mockup-overlay"></div>
     <div class="mockup-caption">
       <div class="mockup-caption-title">Workshop Direção Cinematográfica</div>
@@ -928,7 +919,7 @@ section { padding: 48px 20px; }
     <div class="bonus-card">
       <div class="bonus-card-tag">Bônus 2</div>
       <div class="bonus-media-single">
-        <video src="fotos/video/ensaio-casal-take.mp4" autoplay muted loop playsinline></video>
+        <video class="lazy-video" data-src="fotos/video/ensaio-casal-take.mp4" muted loop playsinline preload="none"></video>
       </div>
       <div class="bonus-card-title">Gravação de um ensaio real</div>
       <p class="bonus-card-text">Para você ver o método na prática.</p>
@@ -1128,24 +1119,53 @@ section { padding: 48px 20px; }
 
 <script>
 (function () {
-  var stack = document.querySelector('.mockup-video-stack');
-  if (!stack) return;
-  var videos = Array.prototype.slice.call(stack.querySelectorAll('video'));
-  if (!videos.length) return;
+  var video = document.getElementById('hero-video');
+  if (!video) return;
+  var sources = (video.getAttribute('data-sources') || '').split(',').filter(Boolean);
+  if (!sources.length) return;
   var idx = 0;
-  function playCurrent() {
-    videos[idx].currentTime = 0;
-    videos[idx].play().catch(function () {});
+
+  function loadClip(i) {
+    video.classList.remove('is-visible');
+    video.src = sources[i];
+    video.load();
   }
-  videos.forEach(function (v) {
-    v.addEventListener('ended', function () {
-      videos[idx].classList.remove('active');
-      idx = (idx + 1) % videos.length;
-      videos[idx].classList.add('active');
-      playCurrent();
-    });
+  video.addEventListener('loadeddata', function () {
+    video.classList.add('is-visible');
+    video.play().catch(function () {});
   });
-  playCurrent();
+  video.addEventListener('ended', function () {
+    idx = (idx + 1) % sources.length;
+    loadClip(idx);
+  });
+  video.addEventListener('error', function () {
+    idx = (idx + 1) % sources.length;
+    if (idx !== 0) loadClip(idx);
+  });
+  loadClip(idx);
+})();
+
+(function () {
+  var lazyVideos = document.querySelectorAll('.lazy-video[data-src]');
+  if (!lazyVideos.length) return;
+  if (!('IntersectionObserver' in window)) {
+    lazyVideos.forEach(function (v) {
+      v.src = v.getAttribute('data-src');
+      v.play().catch(function () {});
+    });
+    return;
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var v = entry.target;
+        if (!v.src) { v.src = v.getAttribute('data-src'); v.load(); }
+        v.play().catch(function () {});
+        observer.unobserve(v);
+      }
+    });
+  }, { rootMargin: '200px' });
+  lazyVideos.forEach(function (v) { observer.observe(v); });
 })();
 
 (function () {
