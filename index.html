@@ -919,7 +919,7 @@ section { padding: 48px 20px; }
     <div class="bonus-card">
       <div class="bonus-card-tag">Bônus 2</div>
       <div class="bonus-media-single">
-        <video class="lazy-video" data-src="fotos/video/ensaio-casal-take.mp4" muted loop playsinline preload="none"></video>
+        <video class="lazy-video" poster="fotos/video/ensaio-casal-poster.jpg" data-src="fotos/video/ensaio-casal-take.mp4" muted loop playsinline webkit-playsinline preload="none"></video>
       </div>
       <div class="bonus-card-title">Gravação de um ensaio real</div>
       <p class="bonus-card-text">Para você ver o método na prática.</p>
@@ -1173,12 +1173,21 @@ section { padding: 48px 20px; }
       if (entry.isIntersecting) {
         var v = entry.target;
         if (!v.src) { v.src = v.getAttribute('data-src'); v.load(); }
-        v.play().catch(function () {});
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
         observer.unobserve(v);
       }
     });
-  }, { rootMargin: '200px' });
+  }, { rootMargin: '600px' });
   lazyVideos.forEach(function (v) { observer.observe(v); });
+
+  var resumeEvents = ['touchstart', 'click', 'scroll'];
+  function resumeLazy() {
+    lazyVideos.forEach(function (v) {
+      if (v.src && v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    });
+  }
+  resumeEvents.forEach(function (evt) { document.addEventListener(evt, resumeLazy, { passive: true }); });
 })();
 
 (function () {
