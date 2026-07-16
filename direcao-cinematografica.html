@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1208544700266627');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1208544700266627&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xd33eu1ycq");
+</script>
+<!-- End Microsoft Clarity -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="fotos/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="fotos/favicon-16.png">
+<link rel="apple-touch-icon" href="fotos/apple-touch-icon.png">
+<link rel="preload" as="image" href="fotos/ensaio-5.jpg">
+<title>Workshop Direção Cinematográfica | Felipe Pick</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #F2EAD8;
+  --bg-alt: #E6DBBE;
+  --dark: #15130E;
+  --dark-2: #0a0906;
+  --ink: #1C1A14;
+  --ink-soft: #2A2013;
+  --muted: #B8AA88;
+  --muted-dark: #5B4A2F;
+  --line: #C7B385;
+  --line-dark: #52462E;
+  --line-darker: #3A3120;
+  --gold: #CBA553;
+  --gold-strong: #B08D3E;
+  --cream: #FBF6E9;
+  --cream-soft: #E3D6B0;
+  --card-light: #FFFFFF;
+  --card-light-alt: #FBF6E9;
+  --card-dark: #242017;
+  --card-dark-alt: #292417;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(20,16,8,0.10);
+}
+
+body {
+  background: var(--bg);
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  color: var(--ink);
+  max-width: 430px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ---- SHARED ---- */
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dark);
+  font-weight: 600;
+  margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+.eyebrow.on-dark { color: var(--dark); background: var(--gold); }
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.14;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.section-title.on-dark { color: var(--cream); }
+.section-title em { font-style: italic; color: var(--gold); font-weight: 600; }
+
+.section-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.section-body.on-dark { color: var(--cream-soft); }
+.section-body strong { color: var(--ink); font-weight: 600; }
+.section-body.on-dark strong { color: var(--cream); font-weight: 600; }
+
+section { padding: 48px 20px; }
+
+/* ---- 1. HERO ---- */
+.sec-hero { background: var(--bg); padding-top: 40px; }
+.hero-eyebrow-tag {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  font-weight: 600;
+  background: var(--dark);
+  padding: 7px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 30px;
+}
+
+.mockup-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--dark-2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.mockup-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(0.8) contrast(1.08) saturate(0.9);
+}
+.mockup-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,9,6,0.2) 0%, rgba(10,9,6,0.05) 45%, rgba(10,9,6,0.92) 100%);
+}
+.mockup-play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px; height: 64px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+}
+.mockup-play::after {
+  content: '';
+  width: 0; height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 16px solid #15130E;
+  margin-left: 5px;
+}
+.mockup-tag {
+  position: absolute;
+  top: 16px; left: 16px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--gold);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+.mockup-caption {
+  position: absolute;
+  bottom: 20px; left: 20px; right: 20px;
+}
+.mockup-caption-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 21px;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+.mockup-caption-meta {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ---- 2. PROVA SOCIAL ---- */
+.sec-prova { background: var(--bg-alt); }
+.prova-title { margin-bottom: 28px; }
+.feedback-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.feedback-card {
+  overflow: hidden;
+  background: var(--dark-2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.feedback-card img { width: 100%; }
+
+/* ---- 3. DORES (dark) ---- */
+.sec-dores { background: var(--dark); }
+.dores-title { margin-bottom: 28px; }
+.quote-list { display: flex; flex-direction: column; gap: 12px; }
+.quote-item {
+  padding: 22px;
+  background: var(--card-dark);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+}
+.quote-item::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 34px;
+  color: var(--gold);
+  line-height: 0.4;
+  display: block;
+  margin-bottom: 10px;
+}
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--cream);
+}
+
+/* ---- 4. DIAGNÓSTICO ---- */
+.sec-diagnostico { background: var(--bg); }
+.diag-title { margin-bottom: 28px; }
+.diag-list { display: flex; flex-direction: column; gap: 14px; }
+.diag-item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 16px;
+  padding: 20px;
+  background: var(--card-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.diag-num {
+  width: 42px; height: 42px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--dark);
+}
+.diag-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  margin-bottom: 8px;
+}
+.diag-text {
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--muted-dark);
+}
+.diag-close {
+  margin-top: 24px;
+  padding: 20px;
+  background: var(--dark);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.diag-close p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--cream);
+}
+
+/* ---- 5. SOLUÇÃO ---- */
+.sec-solucao { background: var(--bg-alt); }
+.solucao-title { margin-bottom: 8px; }
+.solucao-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--gold-strong);
+  margin-bottom: 28px;
+}
+.step-list { display: flex; flex-direction: column; gap: 14px; }
+.step-item {
+  display: grid; grid-template-columns: 42px 1fr; gap: 16px; align-items: start;
+  padding: 18px 20px;
+  background: var(--card-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.step-badge {
+  width: 42px; height: 42px;
+  background: var(--dark);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--gold);
+}
+.step-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.step-text {
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--muted-dark);
+}
+
+/* ---- 6. O QUE VOCÊ RECEBE (dark) ---- */
+.sec-recebe { background: var(--dark); }
+.recebe-title { margin-bottom: 26px; }
+.recebe-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 26px; }
+.recebe-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 18px;
+  background: var(--card-dark);
+  border-radius: var(--radius);
+}
+.recebe-marker {
+  flex-shrink: 0; width: 24px; height: 24px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 1px;
+}
+.recebe-marker-inner { display: none; }
+.recebe-marker::after { content: '\2713'; font-size: 13px; font-weight: 700; color: var(--dark); }
+.recebe-text { font-size: 14.5px; font-weight: 400; line-height: 1.6; color: var(--cream-soft); }
+.recebe-text strong { color: var(--cream); font-weight: 600; }
+
+.bonus-media { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 26px; }
+.bonus-photo { position: relative; aspect-ratio: 3 / 4; overflow: hidden; border-radius: var(--radius); }
+.bonus-photo img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9) saturate(0.95); }
+.bonus-photo-tag {
+  position: absolute; top: 10px; left: 10px;
+  font-size: 9px; letter-spacing: 0.08em; font-weight: 700; text-transform: uppercase;
+  color: var(--dark); background: var(--gold);
+  border-radius: 999px;
+  padding: 5px 10px;
+}
+
+/* ---- 7. PARA QUEM É ---- */
+.sec-publico { background: var(--bg); }
+.publico-title { margin-bottom: 26px; }
+.publico-group { margin-bottom: 16px; }
+.publico-label {
+  font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  font-weight: 700; margin-bottom: 12px;
+}
+.publico-label.yes { color: var(--gold-strong); }
+.publico-label.no { color: var(--muted-dark); }
+.publico-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.publico-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+}
+.publico-group.is-yes .publico-list li { background: var(--card-light); box-shadow: var(--shadow); }
+.publico-group.is-no .publico-list li { background: var(--bg-alt); }
+.pub-icon {
+  flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; margin-top: 1px;
+}
+.pub-icon.yes { background: var(--gold); color: var(--dark); }
+.pub-icon.no { background: var(--muted); color: var(--cream); }
+.publico-list span.pub-text { font-size: 14.5px; font-weight: 500; line-height: 1.55; color: var(--ink-soft); }
+.publico-close {
+  text-align: center; padding: 20px; margin-top: 20px;
+  background: var(--dark); border-radius: var(--radius);
+}
+.publico-close p {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600;
+  font-size: 18px; color: var(--cream); line-height: 1.45;
+}
+
+/* ---- 8. ANCORAGEM ---- */
+.sec-ancoragem { background: var(--bg-alt); }
+.ancoragem-title { margin-bottom: 26px; }
+.anchor-list {
+  display: flex; flex-direction: column; gap: 0; margin-bottom: 4px;
+  background: var(--card-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.anchor-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--bg-alt);
+}
+.anchor-row:nth-child(even) { background: var(--card-light-alt); }
+.anchor-row:last-child { border-bottom: none; }
+.anchor-name { font-size: 13.5px; font-weight: 500; color: var(--ink-soft); line-height: 1.45; }
+.anchor-leader { display: none; }
+.anchor-price { font-size: 14px; font-weight: 600; color: var(--muted); text-decoration: line-through; white-space: nowrap; }
+.anchor-total {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 20px;
+  margin-top: 4px;
+  background: var(--dark);
+  border-radius: var(--radius);
+}
+.anchor-total-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--cream-soft); }
+.anchor-total-price { font-size: 17px; font-weight: 700; color: var(--cream); text-decoration: line-through; }
+
+.ancoragem-result { text-align: center; margin-top: 28px; padding: 28px 20px; background: var(--card-light); border-radius: var(--radius); box-shadow: var(--shadow); }
+.ancoragem-result p.no-pay { font-size: 13.5px; font-weight: 500; color: var(--muted-dark); margin-bottom: 14px; }
+.ancoragem-from-to { font-size: 14px; font-weight: 500; color: var(--muted-dark); margin-bottom: 6px; }
+.ancoragem-from-to .old { text-decoration: line-through; }
+.ancoragem-price-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 58px; font-style: italic; font-weight: 700;
+  color: var(--ink); line-height: 1;
+  margin-bottom: 12px;
+}
+.ancoragem-price-big span { font-size: 24px; vertical-align: super; font-style: normal; }
+.ancoragem-discount { font-size: 13.5px; font-weight: 500; color: var(--muted-dark); }
+.ancoragem-discount strong { color: var(--gold-strong); font-weight: 700; }
+
+/* ---- 9. COMO FUNCIONA + GARANTIA + CTA (dark) ---- */
+.sec-funciona { background: var(--dark); text-align: center; }
+.funciona-eyebrow { justify-content: center; }
+.funciona-lead { font-size: 14px; font-weight: 500; color: var(--cream-soft); margin-bottom: 22px; }
+.funciona-price-row { margin-bottom: 30px; }
+.funciona-old { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: line-through; display: block; margin-bottom: 4px; }
+.funciona-new {
+  font-family: 'Cormorant Garamond', serif; font-size: 60px; font-style: italic; font-weight: 700;
+  color: var(--cream); line-height: 1;
+}
+.funciona-new span { font-size: 24px; vertical-align: super; font-style: normal; }
+.funciona-vitalicio {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--dark); background: var(--gold); border-radius: 999px; padding: 6px 14px; margin-top: 12px;
+}
+
+.como-list { text-align: left; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.como-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 16px 18px;
+  background: var(--card-dark);
+  border-radius: var(--radius);
+}
+.como-num {
+  flex-shrink: 0; width: 26px; height: 26px;
+  background: var(--gold); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Jost', sans-serif; font-weight: 700; font-size: 13px; color: var(--dark);
+}
+.como-text { font-size: 14.5px; font-weight: 500; color: var(--cream-soft); line-height: 1.5; padding-top: 3px; }
+
+.garantia-block { margin-bottom: 28px; padding: 24px; background: var(--card-dark); border-radius: var(--radius); }
+.garantia-icon {
+  width: 46px; height: 46px; background: var(--gold); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;
+}
+.garantia-icon svg { width: 20px; height: 20px; }
+.garantia-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700; font-size: 19px; color: var(--cream); margin-bottom: 10px; }
+.garantia-text { font-size: 14px; font-weight: 500; color: var(--cream-soft); line-height: 1.6; }
+
+.btn {
+  display: block; width: 100%; min-height: 56px;
+  background: var(--gold); color: var(--dark);
+  font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 18px 20px; border: none; border-radius: 999px; cursor: pointer;
+  text-align: center; text-decoration: none;
+  box-shadow: 0 6px 20px rgba(203,165,83,0.3);
+}
+
+/* ---- 10. HISTÓRIA PESSOAL ---- */
+.sec-historia { background: var(--bg); }
+.historia-title { margin-bottom: 20px; }
+.historia-text { margin-bottom: 28px; }
+.escolha-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+.escolha-card { padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); }
+.escolha-card.no { background: var(--card-light); }
+.escolha-card.yes { background: var(--dark); }
+.escolha-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.escolha-mark { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+.escolha-mark.no { background: var(--muted); color: var(--cream); }
+.escolha-mark.yes { background: var(--gold); color: var(--dark); }
+.escolha-label { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; }
+.escolha-card.no .escolha-label { color: var(--muted-dark); }
+.escolha-card.yes .escolha-label { color: var(--gold); }
+.escolha-text { font-size: 14.5px; font-weight: 400; line-height: 1.6; }
+.escolha-card.no .escolha-text { color: var(--ink-soft); }
+.escolha-card.yes .escolha-text { color: var(--cream-soft); }
+
+.historia-callout {
+  text-align: center; padding: 26px 20px; margin-bottom: 28px;
+  background: var(--dark); border-radius: var(--radius);
+}
+.historia-callout p {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600;
+  font-size: 19px; color: var(--cream); line-height: 1.45;
+}
+
+.creator-photo-block { position: relative; width: 100px; height: 100px; margin: 0 auto; }
+.creator-photo-block img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; filter: grayscale(0.2) brightness(0.98); }
+.creator-photo-border { position: absolute; inset: -5px; border: 3px solid var(--gold); border-radius: 50%; pointer-events: none; }
+
+/* ---- 11. BIO (dark) ---- */
+.sec-bio { background: var(--dark); }
+.bio-photo-block { position: relative; width: 104px; height: 104px; margin-bottom: 22px; }
+.bio-photo { width: 104px; height: 104px; object-fit: cover; object-position: center top; border-radius: 50%; filter: brightness(0.95) contrast(1.05) saturate(0.85); }
+.bio-photo-border { position: absolute; inset: -5px; border: 3px solid var(--gold); border-radius: 50%; pointer-events: none; }
+.bio-name { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+.bio-role {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--dark); background: var(--gold); border-radius: 999px; padding: 5px 12px; margin-bottom: 24px;
+}
+.bio-rule { display: none; }
+.bio-body { display: flex; flex-direction: column; gap: 14px; }
+.bio-p { font-size: 14.5px; font-weight: 400; line-height: 1.7; color: var(--cream-soft); padding: 18px 20px; background: var(--card-dark); border-radius: var(--radius); }
+.bio-p strong { color: var(--cream); font-weight: 600; }
+
+/* ---- 12. FAQ ---- */
+.sec-faq { background: var(--bg-alt); }
+.faq-title { margin-bottom: 24px; }
+.faq-list { display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: var(--card-light); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); }
+.faq-item summary {
+  list-style: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.4;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--gold); color: var(--dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 700; line-height: 1;
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-answer { font-size: 14.5px; font-weight: 400; line-height: 1.65; color: var(--muted-dark); margin-top: 14px; }
+
+.faq-final { text-align: center; margin-top: 30px; }
+.faq-final-price { font-size: 14px; font-weight: 500; color: var(--muted-dark); margin-bottom: 18px; }
+.faq-final-price .old { text-decoration: line-through; }
+.faq-final-price strong { color: var(--gold-strong); font-weight: 700; }
+
+/* ---- 13. FECHAMENTO ---- */
+.sec-fechamento { background: var(--dark); text-align: center; position: relative; overflow: hidden; }
+.fechamento-texture {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(203,165,83,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.fechamento-price { font-size: 14px; font-weight: 500; color: var(--cream-soft); margin-bottom: 28px; position: relative; }
+.fechamento-price .old { text-decoration: line-through; }
+.fechamento-price strong { color: var(--cream); font-weight: 700; }
+
+/* Footer */
+.page-footer {
+  background: var(--dark-2); padding: 20px 24px; text-align: center;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--line-dark); font-weight: 500;
+}
+
+/* ---- DESKTOP ---- */
+@media (min-width: 768px) {
+  body { max-width: 760px; }
+  section { padding: 64px 56px; }
+
+  .hero-title { font-size: 48px; }
+  .section-title { font-size: 42px; }
+  .funciona-new, .ancoragem-price-big { font-size: 76px; }
+
+  .section-body, .quote-text, .diag-text, .step-text, .recebe-text,
+  .pub-text, .como-text, .garantia-text, .bio-p, .escolha-text, .faq-answer { font-size: 16px; }
+
+  .feedback-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .escolha-list { flex-direction: row; }
+  .escolha-card { flex: 1; }
+  .btn { font-size: 13px; padding: 19px 24px; }
+  .bio-photo-block, .bio-photo { width: 150px; height: 150px; }
+}
+</style>
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-subids async defer></script>
+  <script async src="https://tally.so/widgets/embed.js"></script>
+</head>
+<body>
+
+<!-- SEÇÃO 1: HERO (sem CTA) -->
+<section class="sec-hero">
+  <div class="hero-eyebrow-tag">Workshop Direção Cinematográfica</div>
+  <h1 class="hero-title">Sinta-se seguro para dirigir seu próximo ensaio, sem depender de poses forçadas ou de referências prontas que tiram sua identidade.</h1>
+
+  <div class="mockup-card">
+    <img class="mockup-img" src="fotos/ensaio-5.jpg" alt="Workshop Direção Cinematográfica">
+    <div class="mockup-overlay"></div>
+    <div class="mockup-tag">Gravação · 2h</div>
+    <div class="mockup-play"></div>
+    <div class="mockup-caption">
+      <div class="mockup-caption-title">Workshop Direção Cinematográfica</div>
+      <div class="mockup-caption-meta">Acesso imediato · Vitalício</div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 2: PROVA SOCIAL -->
+<section class="sec-prova">
+  <div class="eyebrow">Resultado</div>
+  <h2 class="section-title prova-title">Quem aplica essa direção, sente a diferença tanto no ensaio quanto no resultado.</h2>
+
+  <div class="feedback-list">
+    <div class="feedback-card"><img src="fotos/feedback-1.png" alt="Depoimento Talita Kume Fotografia" loading="lazy"></div>
+    <div class="feedback-card"><img src="fotos/feedback-3.png" alt="Depoimento Rôsiane Carvalho" loading="lazy"></div>
+    <div class="feedback-card"><img src="fotos/feedback-4.png" alt="Depoimento Débora Teixeira" loading="lazy"></div>
+    <div class="feedback-card"><img src="fotos/feedback-5.png" alt="Depoimento Patrícia Zacheo" loading="lazy"></div>
+    <div class="feedback-card"><img src="fotos/feedback-2.png" alt="Depoimento Fernanda Costa" loading="lazy"></div>
+    <div class="feedback-card"><img src="fotos/feedback-6.png" alt="Depoimento Margarida" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- SEÇÃO 3: DORES -->
+<section class="sec-dores">
+  <div class="eyebrow on-dark">Isso te soa familiar?</div>
+  <h2 class="section-title on-dark dores-title">Talvez esse pensamento já<br>tenha passado pela sua cabeça</h2>
+
+  <div class="quote-list">
+    <div class="quote-item"><p class="quote-text">Será que eu sei fotografar mesmo, ou só aperto o botão?</p></div>
+    <div class="quote-item"><p class="quote-text">Todo mundo parece conduzir o ensaio com naturalidade, menos eu.</p></div>
+    <div class="quote-item"><p class="quote-text">Será que meu cliente sente minha insegurança na hora das fotos?</p></div>
+    <div class="quote-item"><p class="quote-text">Minhas fotos estão bonitas, mas parecem de qualquer fotógrafo.</p></div>
+    <div class="quote-item"><p class="quote-text">Se eu não souber dirigir, vou sempre precisar baixar meu preço.</p></div>
+    <div class="quote-item"><p class="quote-text">As outras pessoas fecham por estilo. Eu ainda fecho por desconto.</p></div>
+    <div class="quote-item"><p class="quote-text">Será que falta técnica, ou falta saber criar cena de verdade?</p></div>
+  </div>
+</section>
+
+<!-- SEÇÃO 4: DIAGNÓSTICO -->
+<section class="sec-diagnostico">
+  <div class="eyebrow">Diagnóstico</div>
+  <h2 class="section-title diag-title">O problema não é falta de talento ou de cliente, e você não precisa cobrar menos.</h2>
+
+  <div class="diag-list">
+    <div class="diag-item">
+      <span class="diag-num">01</span>
+      <div>
+        <div class="diag-name">Escola da Pose Pronta</div>
+        <p class="diag-text">Você foi ensinado a repetir pose bonita, mas não a conduzir pessoas. A culpa não é sua. Isso deixa o ensaio travado e tira a identidade das suas fotos.</p>
+      </div>
+    </div>
+    <div class="diag-item">
+      <span class="diag-num">02</span>
+      <div>
+        <div class="diag-name">Ilusão da Técnica Sozinha</div>
+        <p class="diag-text">Técnica excelente não segura cliente por si só. Sem criação de cena, emoção e direção, seu trabalho fica bom, mas podia ser de qualquer um.</p>
+      </div>
+    </div>
+    <div class="diag-item">
+      <span class="diag-num">03</span>
+      <div>
+        <div class="diag-name">Ciclo do Desconto Silencioso</div>
+        <p class="diag-text">Quando você não conduz com segurança, sente que precisa compensar no preço. Fecha por valor, não pelo olhar, e seu faturamento fica travado.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="diag-close"><p>Existe um caminho simples para virar esse jogo.</p></div>
+</section>
+
+<!-- SEÇÃO 5: SOLUÇÃO -->
+<section class="sec-solucao">
+  <div class="eyebrow">A solução</div>
+  <h2 class="section-title solucao-title">Workshop Direção<br><em>Cinematográfica</em></h2>
+  <p class="solucao-sub">Não é improviso no ensaio. É direção pronta para usar.</p>
+
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-badge">1</div>
+      <div>
+        <div class="step-name">Acesse o Workshop Direção Cinematográfica</div>
+        <p class="step-text">Os arquivos digitais ficam liberados na hora, para você começar imediatamente.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-badge">2</div>
+      <div>
+        <div class="step-name">Assista ao ensaio gravado</div>
+        <p class="step-text">Aprenda como conduzir pessoas sem travar, sem depender de poses decoradas.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-badge">3</div>
+      <div>
+        <div class="step-name">Use as técnicas já no próximo ensaio</div>
+        <p class="step-text">Crie um ambiente leve, dirija com segurança e construa cenas naturais.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-badge">4</div>
+      <div>
+        <div class="step-name">Aplique a direção e ajuste com a análise</div>
+        <p class="step-text">Conduza com mais segurança e obtenha fotos com aparência cinematográfica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 6: O QUE VOCÊ RECEBE -->
+<section class="sec-recebe">
+  <div class="eyebrow on-dark">O que você recebe</div>
+  <h2 class="section-title on-dark recebe-title">Tudo que acompanha<br>o workshop</h2>
+
+  <ul class="recebe-list">
+    <li class="recebe-item">
+      <div class="recebe-marker"><div class="recebe-marker-inner"></div></div>
+      <span class="recebe-text"><strong>Acesso imediato</strong> à gravação completa do Workshop Direção Cinematográfica</span>
+    </li>
+    <li class="recebe-item">
+      <div class="recebe-marker"><div class="recebe-marker-inner"></div></div>
+      <span class="recebe-text"><strong>2 horas de conteúdo prático</strong> com o método aplicado em ensaios reais</span>
+    </li>
+    <li class="recebe-item">
+      <div class="recebe-marker"><div class="recebe-marker-inner"></div></div>
+      <span class="recebe-text">Os <strong>direcionamentos e frases prontas</strong> para usar direto no próximo ensaio</span>
+    </li>
+    <li class="recebe-item">
+      <div class="recebe-marker"><div class="recebe-marker-inner"></div></div>
+      <span class="recebe-text"><strong>Acesso vitalício</strong> para assistir quando e quantas vezes quiser</span>
+    </li>
+  </ul>
+
+  <div class="bonus-media">
+    <div class="bonus-photo">
+      <div class="bonus-photo-tag">Bônus 1</div>
+      <img src="fotos/ensaio-11.jpg" alt="Moodboard de ensaio" loading="lazy">
+    </div>
+    <div class="bonus-photo">
+      <div class="bonus-photo-tag">Bônus 2</div>
+      <img src="fotos/ensaio-4.jpg" alt="Ensaio real gravado" loading="lazy">
+    </div>
+  </div>
+
+  <ul class="recebe-list" style="margin-bottom: 0;">
+    <li class="recebe-item">
+      <div class="recebe-marker"><div class="recebe-marker-inner"></div></div>
+      <span class="recebe-text"><strong>Bônus 1:</strong> Modelo de Moodboard para replicar com os clientes antes do ensaio</span>
+    </li>
+    <li class="recebe-item">
+      <div class="recebe-marker"><div class="recebe-marker-inner"></div></div>
+      <span class="recebe-text"><strong>Bônus 2:</strong> Gravação de um ensaio real do Felipe Pick mostrando o método na prática</span>
+    </li>
+  </ul>
+</section>
+
+<!-- SEÇÃO 7: PARA QUEM É -->
+<section class="sec-publico">
+  <div class="eyebrow">Para quem é</div>
+  <h2 class="section-title publico-title">Esse workshop é<br>para você?</h2>
+
+  <div class="publico-group is-yes">
+    <div class="publico-label yes">Faz sentido para você se</div>
+    <ul class="publico-list">
+      <li><span class="pub-icon yes">&#10003;</span><span class="pub-text">Você trava ao dirigir casal ou família</span></li>
+      <li><span class="pub-icon yes">&#10003;</span><span class="pub-text">Você sabe a técnica, mas sente falta de identidade no ensaio</span></li>
+      <li><span class="pub-icon yes">&#10003;</span><span class="pub-text">Você está começando e quer conduzir com mais segurança</span></li>
+      <li><span class="pub-icon yes">&#10003;</span><span class="pub-text">Você já tentou copiar poses da internet e não gostou</span></li>
+      <li><span class="pub-icon yes">&#10003;</span><span class="pub-text">Você quer fotos com cara de cena de filme, sem depender de sorte</span></li>
+    </ul>
+  </div>
+
+  <div class="publico-group is-no">
+    <div class="publico-label no">Não é para você se</div>
+    <ul class="publico-list">
+      <li><span class="pub-icon no">&#10005;</span><span class="pub-text">Você quer resultado sem praticar</span></li>
+      <li><span class="pub-icon no">&#10005;</span><span class="pub-text">Você só procura preset, curtida ou truque rápido</span></li>
+      <li><span class="pub-icon no">&#10005;</span><span class="pub-text">Você acha que direção não faz diferença</span></li>
+      <li><span class="pub-icon no">&#10005;</span><span class="pub-text">Você quer continuar cobrando apenas pelo preço</span></li>
+    </ul>
+  </div>
+
+  <div class="publico-close"><p>Se você marcou pelo menos 2 dos tópicos acima, o Workshop Direção Cinematográfica é para você.</p></div>
+</section>
+
+<!-- SEÇÃO 8: ANCORAGEM -->
+<section class="sec-ancoragem">
+  <div class="eyebrow">Recapitulando</div>
+  <h2 class="section-title ancoragem-title">Tudo que você<br>vai receber</h2>
+
+  <div class="anchor-list">
+    <div class="anchor-row">
+      <span class="anchor-name">Gravação completa do Workshop Direção Cinematográfica</span>
+      <span class="anchor-leader"></span>
+      <span class="anchor-price">R$ 127</span>
+    </div>
+    <div class="anchor-row">
+      <span class="anchor-name">Direcionamentos e frases prontas</span>
+      <span class="anchor-leader"></span>
+      <span class="anchor-price">R$ 47</span>
+    </div>
+    <div class="anchor-row">
+      <span class="anchor-name">Acesso vitalício</span>
+      <span class="anchor-leader"></span>
+      <span class="anchor-price">R$ 20</span>
+    </div>
+    <div class="anchor-row">
+      <span class="anchor-name">Bônus 1: Modelo de Moodboard</span>
+      <span class="anchor-leader"></span>
+      <span class="anchor-price">R$ 29</span>
+    </div>
+    <div class="anchor-row">
+      <span class="anchor-name">Bônus 2: Gravação de ensaio real</span>
+      <span class="anchor-leader"></span>
+      <span class="anchor-price">R$ 37</span>
+    </div>
+  </div>
+  <div class="anchor-total">
+    <span class="anchor-total-label">Total</span>
+    <span class="anchor-total-price">R$ 260</span>
+  </div>
+
+  <div class="ancoragem-result">
+    <p class="no-pay">Você não vai pagar esse valor.</p>
+    <div class="ancoragem-from-to"><span class="old">De R$ 260</span> por apenas</div>
+    <div class="ancoragem-price-big"><span>R$</span> 48</div>
+    <p class="ancoragem-discount">Isso representa <strong>82% de desconto</strong>, com Acesso Vitalício.</p>
+  </div>
+</section>
+
+<!-- SEÇÃO 9: COMO FUNCIONA + GARANTIA + CTA -->
+<section class="sec-funciona">
+  <div class="eyebrow on-dark funciona-eyebrow">Acesso agora</div>
+  <p class="funciona-lead">Você poderia facilmente pagar mais por esse acesso.</p>
+
+  <div class="funciona-price-row">
+    <span class="funciona-old">de R$ 260</span>
+    <div class="funciona-new"><span>R$</span> 48</div>
+    <div class="funciona-vitalicio">Acesso Vitalício</div>
+  </div>
+
+  <div class="como-list">
+    <div class="como-item"><span class="como-num">1</span><span class="como-text">Compra feita em ambiente 100% seguro</span></div>
+    <div class="como-item"><span class="como-num">2</span><span class="como-text">Receba o acesso em poucos minutos, via email</span></div>
+    <div class="como-item"><span class="como-num">3</span><span class="como-text">Baixe e use imediatamente</span></div>
+  </div>
+
+  <div class="garantia-block">
+    <div class="garantia-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#C4A96A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2l2.4 4.8 5.3.8-3.8 3.7.9 5.2L12 14l-4.8 2.5.9-5.2L4.3 7.6l5.3-.8z"/>
+      </svg>
+    </div>
+    <div class="garantia-title">7 dias de satisfação total</div>
+    <p class="garantia-text">Não gostou ou não fez sentido? Devolvemos seu dinheiro, sem burocracia.</p>
+  </div>
+
+  <button class="btn" data-tally-open="Bz0GJK" data-tally-layout="modal" data-tally-width="375" data-tally-emoji-animation="none" data-tally-form-events-forwarding="1">Quero acesso imediato para dirigir ensaios com segurança</button>
+</section>
+
+<!-- SEÇÃO 10: HISTÓRIA PESSOAL -->
+<section class="sec-historia">
+  <div class="eyebrow">Por que esse workshop existe</div>
+  <h2 class="section-title historia-title">Já passei por isso</h2>
+
+  <p class="section-body historia-text">Já passei pela sensação de saber fotografar, mas não saber conduzir. No começo, a técnica estava ali. Mas faltava direção. As fotos eram bonitas, mas não contavam nada. Pareciam soltas, não cenas de verdade. Isso me gerava frustração. O Workshop Direção Cinematográfica nasceu justamente para facilitar esse caminho para você. Mostro como conduzir pessoas, criar atmosfera e produzir fotos com linguagem cinematográfica, trazendo mais segurança e identidade em cada clique.</p>
+
+  <div class="escolha-list">
+    <div class="escolha-card no">
+      <div class="escolha-head"><span class="escolha-mark no">&#10005;</span><span class="escolha-label">Manter tudo igual</span></div>
+      <p class="escolha-text">Chegar no ensaio sem saber conduzir. Repetir poses travadas, sentir insegurança e entregar fotos parecidas com as de qualquer um. Continuar dependendo só de indicação e desconto, com o mesmo tipo de cliente, sem valorização.</p>
+    </div>
+    <div class="escolha-card yes">
+      <div class="escolha-head"><span class="escolha-mark yes">&#10003;</span><span class="escolha-label">Escolher o atalho por R$48</span></div>
+      <p class="escolha-text">Aplicar no mesmo dia, conduzir ensaios com clareza, criar cenas com identidade, aumentar a segurança e o valor percebido do seu trabalho.</p>
+    </div>
+  </div>
+
+  <div class="historia-callout">
+    <p>Com R$48, menos que uma pizza com refrigerante, você destrava uma barreira que poderia atrasar seu desenvolvimento por meses.</p>
+  </div>
+
+  <div class="creator-photo-block">
+    <img src="fotos/retrato-pick.jpg" alt="Felipe Pick" loading="lazy">
+    <div class="creator-photo-border"></div>
+  </div>
+</section>
+
+<!-- SEÇÃO 11: BIO DO CRIADOR -->
+<section class="sec-bio">
+  <div class="eyebrow on-dark">O professor</div>
+
+  <div class="bio-photo-block">
+    <img class="bio-photo" src="fotos/pick-foto.jpg" alt="Felipe Pick" loading="lazy">
+    <div class="bio-photo-border"></div>
+  </div>
+
+  <div class="bio-name">Felipe Pick</div>
+  <div class="bio-role">Sua história em cenas de filme</div>
+
+  <div class="bio-rule"></div>
+
+  <div class="bio-body">
+    <p class="bio-p">Tenho 24 anos e sou fotógrafo especializado em <strong>ensaios de casal, família e casamentos com identidade cinematográfica.</strong></p>
+    <p class="bio-p">Sempre fui apaixonado por filmes. Assistia até três por dia desde criança. Quando comecei a fotografar, naturalmente levei as técnicas do cinema para os meus ensaios. Meu trabalho passou a ser reconhecido pela atmosfera de <strong>cena de filme.</strong></p>
+    <p class="bio-p">Desenvolvi meu método para não dirigir poses, mas <strong>direcionar pessoas.</strong> Não criar apenas fotos, mas cenas reais. Registrar clientes vivendo um momento, não só na estética, mas na experiência.</p>
+  </div>
+</section>
+
+<!-- SEÇÃO 12: FAQ -->
+<section class="sec-faq">
+  <div class="eyebrow">Perguntas frequentes</div>
+  <h2 class="section-title faq-title">Ainda com<br>alguma dúvida?</h2>
+
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>Como recebo e acesso o conteúdo?</summary>
+      <p class="faq-answer">Após a compra, você recebe o arquivo digital por email. É só baixar e assistir no seu tempo.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Serve para ensaio de casal, família e casamento?</summary>
+      <p class="faq-answer">Sim. O conteúdo foi pensado para quem fotografa pessoas nesses contextos. Você aprende a dirigir e criar cenas com segurança.</p>
+    </details>
+    <details class="faq-item">
+      <summary>E se eu não gostar?</summary>
+      <p class="faq-answer">Tem 7 dias de garantia. Se não for útil, devolvemos o valor sem complicação.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Precisa ser avançado para aproveitar?</summary>
+      <p class="faq-answer">Não. Quem já fotografa consegue aplicar. O foco é direção, não técnica complicada.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Em quanto tempo vejo resultado?</summary>
+      <p class="faq-answer">Em 1 dia você já pode usar o que aprendeu no próximo ensaio.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Isso ajuda a dar identidade às fotos?</summary>
+      <p class="faq-answer">Sim. Você passa a criar cenas, não só poses. As fotos ganham mais estilo e linguagem de cinema.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Serve para quem trava ao dirigir o cliente?</summary>
+      <p class="faq-answer">Sim. O foco é destravar essa insegurança e ajudar você a conduzir com naturalidade.</p>
+    </details>
+  </div>
+
+  <div class="faq-final">
+    <p class="faq-final-price"><span class="old">De R$ 260</span> por apenas <strong>R$ 48</strong>, com Acesso Vitalício.</p>
+    <button class="btn" data-tally-open="Bz0GJK" data-tally-layout="modal" data-tally-width="375" data-tally-emoji-animation="none" data-tally-form-events-forwarding="1">Quero garantir meu acesso agora</button>
+  </div>
+</section>
+
+<!-- SEÇÃO 13: FECHAMENTO -->
+<section class="sec-fechamento">
+  <div class="fechamento-texture"></div>
+  <div class="eyebrow on-dark funciona-eyebrow">Acesse agora</div>
+  <h2 class="section-title on-dark" style="margin-bottom: 24px;">Direção pronta para usar<br><em>no seu próximo ensaio.</em></h2>
+  <p class="fechamento-price"><span class="old">De R$ 260</span> por apenas <strong>R$ 48</strong>, com Acesso Vitalício.</p>
+  <button class="btn" data-tally-open="Bz0GJK" data-tally-layout="modal" data-tally-width="375" data-tally-emoji-animation="none" data-tally-form-events-forwarding="1">Quero garantir meu acesso agora</button>
+</section>
+
+<footer class="page-footer">
+  © Felipe Pick · Workshop Direção Cinematográfica
+</footer>
+
+</body>
+</html>
