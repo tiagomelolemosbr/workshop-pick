@@ -60,6 +60,8 @@ html { scroll-behavior: smooth; }
   --card-light-alt: #F7F0E0;
   --card-dark: #123349;
   --card-dark-alt: #163B54;
+  --green: #34523B;
+  --green-strong: #253C2A;
   --radius: 12px;
   --shadow: 0 4px 20px rgba(8,40,61,0.12);
 }
@@ -564,10 +566,21 @@ section { padding: 48px 20px; }
   text-align: center; text-decoration: none;
   box-shadow: 0 6px 20px rgba(102,54,19,0.35);
 }
-.btn-blue {
-  background: var(--dark); color: var(--cream);
-  box-shadow: 0 6px 20px rgba(8,40,61,0.35);
+.btn-green {
+  background: var(--green); color: var(--cream);
+  box-shadow: 0 6px 20px rgba(52,82,59,0.4);
   margin-top: 28px;
+  animation: btn-bounce 1s ease-in-out infinite;
+  will-change: transform;
+}
+.btn-green:hover { background: var(--green-strong); }
+
+@keyframes btn-bounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-green { animation: none; }
 }
 .ancoragem-selos { margin-top: 20px; }
 .hero-btn { margin: 26px 0 0; }
@@ -878,6 +891,7 @@ section { padding: 48px 20px; }
       </div>
     </div>
   </div>
+  <a href="#preco" class="btn btn-green">Quero dirigir com confiança</a>
 </section>
 
 <!-- SEÇÃO 6: O QUE VOCÊ RECEBE -->
@@ -991,7 +1005,7 @@ section { padding: 48px 20px; }
       <p class="ancoragem-discount">Isso é <strong>89% de desconto</strong>, com Acesso Vitalício.</p>
     </div>
 
-    <button class="btn btn-blue" data-tally-open="Bz0GJK" data-tally-layout="modal" data-tally-width="375" data-tally-emoji-animation="none" data-tally-form-events-forwarding="1">Quero dirigir com confiança</button>
+    <button class="btn btn-green" data-tally-open="Bz0GJK" data-tally-layout="modal" data-tally-width="375" data-tally-emoji-animation="none" data-tally-form-events-forwarding="1">Quero dirigir com confiança</button>
 
     <div class="selo-row center ancoragem-selos">
       <span class="selo-item">Garantia 7 dias</span>
