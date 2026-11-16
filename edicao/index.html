@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://foto.felipepick.com/ednxzxbul.js?"+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','c9lrv=BRFfPy41QzMqJlAyLjI9QhpIUFZLXgoKURMHFBMICxQFFglWGRcD');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edição de Cinema no Lightroom · Felipe Pick</title>
+<meta name="description" content="A edição é onde a sua identidade aparece primeiro. As 7 aulas de edição da Formação Poesia Visual, com o Felipe Pick.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@300;400;500&family=Big+Shoulders+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:    oklch(0.92 0.018 78);
+    --paper-2:  oklch(0.885 0.022 75);
+    --paper-3:  oklch(0.95 0.012 80);
+    --ink:      oklch(0.18 0.015 55);
+    --ink-2:    oklch(0.24 0.016 55);
+    --ink-soft: oklch(0.34 0.018 55);
+    --on-ink:   oklch(0.78 0.02 70);
+    --sienna:   oklch(0.5 0.12 38);
+    --sienna-l: oklch(0.68 0.12 42);
+    --gold:     oklch(0.74 0.105 75);
+    --rule:     oklch(0.74 0.018 65);
+    --rule-ink: oklch(0.34 0.018 55);
+    --display:   "Bricolage Grotesque", system-ui, sans-serif;
+    --display-2: "Big Shoulders Display", "Bricolage Grotesque", sans-serif;
+    --body-sans: "Instrument Sans", system-ui, sans-serif;
+    --mono:      "JetBrains Mono", ui-monospace, monospace;
+    --shadow:    0 6px 24px oklch(0.18 0.015 55 / 0.2);
+    --shadow-lg: 0 18px 48px oklch(0.18 0.015 55 / 0.26);
+    --gutter: 20px;
+    --sec-y: 64px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body-sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, video { display: block; max-width: 100%; }
+  p { margin: 0; }
+  strong { font-weight: 500; color: var(--ink); }
+
+  .wrap { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 var(--gutter); }
+  .narrow { max-width: 760px; }
+  section { padding: var(--sec-y) 0; }
+
+  .eyebrow {
+    display: inline-block;
+    font-family: var(--display-2);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--sienna);
+  }
+  h1, h2, h3 { margin: 0; font-family: var(--display); letter-spacing: -0.015em; text-wrap: balance; }
+  h2 {
+    font-weight: 500;
+    font-size: clamp(27px, 5.4vw, 44px);
+    line-height: 1.12;
+  }
+  h2 em, h1 em { font-style: normal; font-weight: 600; color: var(--sienna); }
+  .head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+  .head.center { align-items: center; text-align: center; margin-left: auto; margin-right: auto; }
+  .head h2 { max-width: 22ch; }
+
+  /* Fundo escuro */
+  .dark { background: var(--ink); color: var(--paper); }
+  .dark .eyebrow { color: var(--gold); }
+  .dark strong { color: var(--paper); }
+  .dark h2 em { color: var(--gold); }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--paper);
+    background: var(--sienna);
+    border-radius: 999px;
+    padding: 19px 28px;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: transform .15s ease, background .15s ease;
+  }
+  .btn-primary:hover { transform: translateY(-1px); background: var(--ink); }
+  .dark .btn-primary:hover { background: var(--sienna-l); }
+  .btn-primary .preco { color: var(--gold); }
+
+  .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 9px 14px;
+    white-space: nowrap;
+  }
+  .dark .badge { border-color: var(--rule-ink); color: var(--paper); }
+
+  .cta-block { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 440px; }
+  .cta-block.center { margin: 0 auto; }
+
+  /* ═══ 1 · HERO ═══ */
+  .hero { padding: 32px 0 56px; }
+  .hero-grid { display: grid; gap: 28px; }
+  .hero-text { display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; }
+  .brand { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .logo { font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: -0.01em; }
+  .camera-row { font-size: 15px; letter-spacing: 0.25em; }
+  .hero-copy { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  h1 {
+    font-weight: 500;
+    font-size: clamp(30px, 7.4vw, 56px);
+    line-height: 1.1;
+    max-width: 17ch;
+  }
+  .mockup-card {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 5;
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--ink);
+    box-shadow: var(--shadow-lg);
+  }
+  .mockup-card video { width: 100%; height: 100%; object-fit: cover; }
+  .mockup-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, oklch(0.18 0.015 55 / 0.78) 0%, oklch(0.18 0.015 55 / 0) 45%);
+    pointer-events: none;
+  }
+  .mockup-caption {
+    position: absolute; left: 18px; right: 18px; bottom: 18px;
+    color: var(--paper); display: flex; flex-direction: column; gap: 6px;
+  }
+  .mockup-caption-title { font-family: var(--display); font-weight: 500; font-size: 19px; line-height: 1.2; }
+  .mockup-caption-meta { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .rec {
+    position: absolute; top: 14px; left: 14px;
+    display: flex; align-items: center; gap: 6px;
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; color: var(--paper);
+    background: oklch(0.18 0.015 55 / 0.45); border-radius: 999px; padding: 6px 10px;
+  }
+  .rec::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--sienna); animation: blink 1.4s infinite; }
+  @keyframes blink { 50% { opacity: .25; } }
+  /* no mobile o vídeo fica entre a headline e o botão */
+  .hero-media { order: 2; }
+  .hero-text .cta-block { order: 3; }
+  .hero-grid { grid-template-areas: "top" "media" "cta"; }
+  .hero-top { grid-area: top; }
+  .hero-media { grid-area: media; }
+  .hero-cta { grid-area: cta; justify-self: center; }
+
+  /* ═══ 2 · PROVA ═══ */
+  .prova { background: var(--paper-2); }
+  .feedback-list {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 calc(var(--gutter) * -1);
+    padding: 0 var(--gutter) 8px;
+    scrollbar-width: none;
+  }
+  .feedback-list::-webkit-scrollbar { display: none; }
+  .feedback-card {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
+    display: flex; align-items: center;
+    background: oklch(0.21 0.008 250);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    padding: 6px 0;
+  }
+  .feedback-card img { width: 100%; }
+  .swipe-hint { margin-top: 14px; text-align: center; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+
+  /* ═══ 3 · DORES ═══ */
+  .quote-list { display: grid; gap: 12px; }
+  .quote-item {
+    position: relative;
+    border: 1px solid var(--rule-ink);
+    border-radius: 14px;
+    padding: 20px 20px 20px 52px;
+    background: var(--ink-2);
+  }
+  .quote-item::before {
+    content: "“";
+    position: absolute; left: 18px; top: 10px;
+    font-family: var(--display); font-weight: 600; font-size: 40px; line-height: 1;
+    color: var(--gold);
+  }
+  .quote-item p { font-family: var(--display); font-weight: 400; font-size: 18px; line-height: 1.35; color: var(--paper); }
+
+  /* ═══ 4 · DIAGNÓSTICO ═══ */
+  .diag-list { display: grid; gap: 14px; }
+  .diag-item {
+    display: flex; flex-direction: column; gap: 10px;
+    background: var(--paper-3);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .diag-num { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--sienna); }
+  .diag-name { font-family: var(--display); font-weight: 600; font-size: 21px; line-height: 1.2; }
+  .diag-item p { color: var(--ink-soft); }
+  .diag-close {
+    margin-top: 36px; text-align: center;
+    font-family: var(--display); font-weight: 500; font-size: clamp(21px, 3.6vw, 28px); line-height: 1.25;
+  }
+  .diag-close span { color: var(--sienna); }
+
+  /* ═══ 5 · SOLUÇÃO ═══ */
+  .solucao { background: var(--paper-2); }
+  .solucao-grid { display: grid; gap: 32px; }
+  .solucao-photo { border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 4 / 5; }
+  .solucao-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .solucao-intro { color: var(--ink-soft); font-size: 17px; }
+  .solucao-lead { font-family: var(--display); font-weight: 500; font-size: 20px; margin-top: 20px; }
+  .step-list { list-style: none; margin: 24px 0 32px; padding: 0; display: grid; gap: 12px; }
+  .step-item {
+    display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start;
+    background: var(--paper-3); border: 1px solid var(--rule); border-radius: 14px; padding: 18px;
+  }
+  .step-badge {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--sienna); color: var(--paper);
+    font-family: var(--mono); font-size: 14px;
+  }
+  .step-name { font-family: var(--display); font-weight: 600; font-size: 18px; line-height: 1.25; margin-bottom: 4px; }
+  .step-item p { color: var(--ink-soft); font-size: 15px; }
+
+  /* ═══ 6 · O QUE RECEBE ═══ */
+  .recebe-grid { display: grid; gap: 36px; }
+  .recebe-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+  .recebe-list li {
+    display: grid; grid-template-columns: 28px 1fr; gap: 12px;
+    padding: 18px 0; border-bottom: 1px solid var(--rule-ink);
+    color: var(--on-ink); font-size: 17px;
+  }
+  .recebe-list li:first-child { border-top: 1px solid var(--rule-ink); }
+  .bonus-grid { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+  .bonus-card { display: flex; flex-direction: column; gap: 10px; }
+  .bonus-media { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4 / 5; background: var(--ink-2); }
+  .bonus-media img, .bonus-media video { width: 100%; height: 100%; object-fit: cover; }
+  .bonus-tag {
+    position: absolute; top: 10px; left: 10px;
+    font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    background: var(--gold); color: var(--ink); border-radius: 999px; padding: 6px 10px;
+  }
+  .bonus-title { font-family: var(--display); font-weight: 600; font-size: 17px; line-height: 1.25; }
+  .bonus-card p { color: var(--on-ink); font-size: 14px; }
+
+  /* ═══ 7 · PRA QUEM É ═══ */
+  .publico-columns { display: grid; gap: 16px; }
+  .publico-group { border-radius: 14px; padding: 24px; border: 1px solid var(--rule); }
+  .publico-group.yes { background: var(--paper-3); }
+  .publico-group.no { background: transparent; }
+  .publico-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px; }
+  .publico-group.yes .publico-label { color: var(--sienna); }
+  .publico-group.no .publico-label { color: var(--ink-soft); }
+  .publico-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .publico-list li { display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: start; }
+  .pub-icon {
+    width: 24px; height: 24px; border-radius: 50%;
+    display: grid; place-items: center; font-size: 12px; margin-top: 1px;
+  }
+  .yes .pub-icon { background: var(--sienna); color: var(--paper); }
+  .no .pub-icon { border: 1px solid var(--rule); color: var(--ink-soft); }
+  .no .publico-list li { color: var(--ink-soft); }
+  .publico-close {
+    margin-top: 28px; text-align: center;
+    font-family: var(--display); font-weight: 500; font-size: clamp(19px, 3vw, 24px); line-height: 1.3;
+    max-width: 30ch; margin-left: auto; margin-right: auto;
+  }
+
+  /* ═══ 8 · ANCORAGEM ═══ */
+  .ancoragem { background: var(--paper-2); }
+  .anchor-card {
+    background: var(--paper-3);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    display: grid;
+  }
+  .anchor-items { padding: 24px; }
+  .anchor-row {
+    display: flex; justify-content: space-between; gap: 16px; align-items: baseline;
+    padding: 14px 0; border-bottom: 1px dashed var(--rule);
+  }
+  .anchor-price { font-family: var(--mono); font-size: 14px; color: var(--ink-soft); white-space: nowrap; }
+  .anchor-total { display: flex; justify-content: space-between; padding-top: 16px; font-family: var(--mono); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .anchor-total .anchor-price { text-decoration: line-through; text-decoration-color: var(--sienna); }
+  .anchor-offer {
+    background: var(--ink); color: var(--paper);
+    padding: 32px 24px;
+    display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center;
+  }
+  .no-pay { font-family: var(--display); font-size: 19px; }
+  .from-to { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--on-ink); }
+  .from-to s { text-decoration-color: var(--sienna-l); }
+  .price-big { font-family: var(--display); font-weight: 600; font-size: 76px; line-height: 1; letter-spacing: -0.03em; color: var(--paper); }
+  .price-big span { font-size: 0.36em; vertical-align: 0.95em; margin-right: 4px; color: var(--gold); }
+  .discount { color: var(--on-ink); margin-bottom: 14px; }
+  .discount strong { color: var(--gold); }
+
+  /* ═══ 9 · HISTÓRIA ═══ */
+  .historia-grid { display: grid; gap: 32px; }
+  .historia-text { font-size: 17px; color: var(--ink-soft); }
+  .historia-text p + p { margin-top: 14px; }
+  .historia-photo { border-radius: 14px; overflow: hidden; aspect-ratio: 4 / 5; box-shadow: var(--shadow-lg); }
+  .historia-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .escolha-list { display: grid; gap: 14px; margin-top: 32px; }
+  .escolha-card { border-radius: 14px; padding: 24px; border: 1px solid var(--rule); }
+  .escolha-card.yes { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+  .escolha-card.yes strong { color: var(--paper); }
+  .escolha-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .escolha-mark { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; }
+  .escolha-card.no .escolha-mark { border: 1px solid var(--rule); color: var(--ink-soft); }
+  .escolha-card.yes .escolha-mark { background: var(--sienna); color: var(--paper); }
+  .escolha-label { font-family: var(--display); font-weight: 600; font-size: 19px; }
+  .escolha-card.yes .escolha-label { color: var(--paper); }
+  .escolha-card.no p { color: var(--ink-soft); }
+  .callout {
+    margin-top: 28px;
+    border-left: 3px solid var(--sienna);
+    padding: 6px 0 6px 20px;
+    font-family: var(--display); font-weight: 500; font-size: clamp(20px, 3vw, 26px); line-height: 1.3;
+  }
+
+  /* ═══ 10 · BIO ═══ */
+  .bio-grid { display: grid; gap: 28px; align-items: center; }
+  .bio-photo { position: relative; max-width: 360px; width: 100%; margin: 0 auto; }
+  .bio-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; position: relative; z-index: 1; }
+  .bio-photo::after {
+    content: ""; position: absolute; inset: 14px -14px -14px 14px;
+    border: 1px solid var(--gold); border-radius: 14px;
+  }
+  .bio-name { font-family: var(--display); font-weight: 600; font-size: clamp(32px, 5vw, 44px); line-height: 1.05; margin-top: 10px; }
+  .bio-role { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-top: 8px; }
+  .bio-body { display: grid; gap: 14px; margin-top: 22px; color: var(--on-ink); font-size: 17px; }
+  .bio-quote {
+    margin-top: 8px; padding: 20px; border-radius: 14px; background: var(--ink-2); border: 1px solid var(--rule-ink);
+    font-family: var(--display); font-size: 19px; line-height: 1.35; color: var(--paper);
+  }
+
+  /* ═══ 11 · FAQ ═══ */
+  .faq-list { display: grid; gap: 10px; }
+  .faq-item { background: var(--paper-3); border: 1px solid var(--rule); border-radius: 12px; }
+  .faq-item summary {
+    list-style: none; cursor: pointer;
+    display: flex; justify-content: space-between; gap: 16px; align-items: center;
+    padding: 18px 20px;
+    font-family: var(--display); font-weight: 500; font-size: 17px; line-height: 1.3;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+"; flex: none; width: 28px; height: 28px; border-radius: 50%;
+    display: grid; place-items: center; border: 1px solid var(--rule);
+    font-family: var(--mono); font-size: 15px; color: var(--sienna); transition: transform .2s ease;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p { padding: 0 20px 20px; color: var(--ink-soft); }
+
+  /* ═══ 12 · FECHAMENTO ═══ */
+  .fechamento { position: relative; overflow: hidden; text-align: center; }
+  .fechamento-bg { position: absolute; inset: 0; }
+  .fechamento-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.28; }
+  .fechamento-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, var(--ink) 0%, oklch(0.18 0.015 55 / 0.55) 50%, var(--ink) 100%); }
+  .fechamento .wrap { position: relative; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+  .fechamento h2 { max-width: 18ch; }
+  .fechamento-price { font-size: 18px; color: var(--on-ink); }
+  .fechamento-price s { text-decoration-color: var(--sienna-l); }
+  .fechamento-price strong { color: var(--gold); font-family: var(--display); font-size: 1.3em; }
+
+  .page-footer {
+    background: var(--ink); color: var(--on-ink); text-align: center;
+    padding: 24px var(--gutter) 32px; border-top: 1px solid var(--rule-ink);
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+
+  /* ─────────── Tablet (≥640) ─────────── */
+  @media (min-width: 640px) {
+    :root { --gutter: 32px; --sec-y: 88px; }
+    .feedback-card { flex-basis: 56%; }
+    .quote-list { grid-template-columns: 1fr 1fr; }
+    .quote-item:last-child { grid-column: 1 / -1; }
+    .publico-columns { grid-template-columns: 1fr 1fr; }
+    .bonus-grid { gap: 20px; }
+    .escolha-list { grid-template-columns: 1fr 1fr; }
+    .step-list { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ─────────── Desktop (≥1024) ─────────── */
+  @media (min-width: 1024px) {
+    :root { --gutter: 48px; --sec-y: 112px; }
+    .head { margin-bottom: 52px; }
+
+    .hero { padding: 40px 0 96px; }
+    .hero-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-areas: "top media" "cta media";
+      column-gap: 72px; row-gap: 36px; align-items: center;
+    }
+    .hero-top { align-self: end; }
+    .hero-cta { align-self: start; justify-self: start; }
+    .hero-text { align-items: flex-start; text-align: left; }
+    .brand { align-items: flex-start; }
+    .hero-copy { align-items: flex-start; }
+    .hero-cta .badges { justify-content: flex-start; }
+    .mockup-card { max-width: none; }
+
+    .feedback-list {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+      overflow: visible; margin: 0; padding: 0;
+    }
+    .feedback-list [aria-hidden="true"] { display: none; }
+    .swipe-hint { display: none; }
+
+    .quote-list { grid-template-columns: repeat(3, 1fr); }
+    .quote-item:last-child { grid-column: auto; }
+    .quote-item:nth-child(7) { grid-column: 2; }
+
+    .diag-list { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .diag-item { padding: 32px; }
+
+    .solucao-grid { grid-template-columns: 0.8fr 1.2fr; gap: 72px; align-items: center; }
+    .solucao .head { margin-bottom: 20px; }
+    .solucao .btn-primary { width: auto; }
+
+    .recebe-grid { grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+
+    .anchor-card { grid-template-columns: 1.15fr 0.85fr; max-width: 980px; margin: 0 auto; }
+    .anchor-items { padding: 40px; align-self: center; }
+    .anchor-offer { padding: 48px 40px; justify-content: center; }
+
+    .historia-grid { grid-template-columns: 1.3fr 0.7fr; gap: 72px; align-items: start; }
+    .historia-photo { position: sticky; top: 40px; }
+
+    .bio-grid { grid-template-columns: 0.8fr 1.2fr; gap: 88px; }
+    .bio-photo { max-width: none; }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-grid { column-gap: 96px; }
+  }
+
+  /* ═══ ANTES E DEPOIS ═══ */
+  .ba {
+    position: relative; width: 100%; overflow: hidden; border-radius: 14px;
+    box-shadow: var(--shadow-lg); background: var(--ink); user-select: none; touch-action: pan-y;
+    --pos: 50%;
+  }
+  .ba img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+  .ba .ba-after { position: absolute; inset: 0; clip-path: inset(0 0 0 var(--pos)); }
+  .ba .ba-line { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: var(--paper); }
+  .ba .ba-knob {
+    position: absolute; top: 50%; left: var(--pos); width: 44px; height: 44px; margin: -22px 0 0 -22px;
+    border-radius: 50%; background: var(--paper); color: var(--ink); display: grid; place-items: center;
+    font-family: var(--mono); font-size: 13px; box-shadow: var(--shadow);
+  }
+  .ba .ba-tag {
+    position: absolute; top: 12px; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--paper); background: oklch(0.18 0.015 55 / 0.55); border-radius: 999px; padding: 6px 10px;
+  }
+  .ba .ba-tag.l { left: 12px; } .ba .ba-tag.r { right: 12px; background: var(--sienna); }
+  .ba input[type=range] { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+  .hero .ba { aspect-ratio: 4 / 5; max-width: 480px; margin: 0 auto; }
+  .ba-hint { margin-top: 12px; text-align: center; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+  .hero-sub { color: var(--ink-soft); font-size: 17px; max-width: 34ch; }
+  .ba-grid { display: grid; gap: 16px; }
+  .ba-grid .ba { aspect-ratio: 3 / 2; }
+
+  .coment-head { margin-top: 64px; }
+  .coment-list { display: grid; gap: 10px; max-width: 560px; margin: 0 auto; }
+  .coment-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); padding: 4px 6px; }
+  .coment-card img { width: 100%; }
+  .depo-list { display: grid; gap: 14px; margin-top: 14px; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .depo-card { background: oklch(0.21 0.008 250); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); padding: 6px 0; }
+  .prova-note { margin-top: 14px; text-align: center; font-size: 13px; color: var(--ink-soft); }
+
+  .aula-list { list-style: none; margin: 0; padding: 0; counter-reset: aula; }
+  .aula-list li {
+    display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding: 18px 0;
+    border-bottom: 1px solid var(--rule-ink);
+  }
+  .aula-list li:first-child { border-top: 1px solid var(--rule-ink); }
+  .aula-num { font-family: var(--mono); font-size: 13px; color: var(--gold); padding-top: 3px; }
+  .aula-name { font-family: var(--display); font-weight: 600; font-size: 19px; line-height: 1.25; color: var(--paper); }
+  .aula-list p { color: var(--on-ink); font-size: 15px; margin-top: 4px; }
+  .capa-card { border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-lg); max-width: 420px; margin: 0 auto; }
+  .capa-card img { width: 100%; }
+
+  @media (min-width: 640px) {
+    .ba-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .hero .ba { max-width: none; }
+    .ba-grid { gap: 20px; }
+    .coment-list { grid-template-columns: 1fr 1fr; max-width: 980px; }
+    .depo-list { grid-template-columns: 1fr 1fr; max-width: 980px; }
+  }
+</style>
+<!-- Meta Pixel (só PageView; InitiateCheckout e Purchase vêm do checkout da Hotmart) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1208544700266627');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1208544700266627&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+
+<!-- ═══ DOBRA 1 · HERO ═══ -->
+<section class="hero" id="topo">
+  <div class="wrap hero-grid">
+    <div class="hero-text hero-top">
+      <div class="brand">
+        <span class="logo">Felipe Pick</span>
+        <span class="camera-row">📷🎞️📸🎬🖼️</span>
+      </div>
+      <div class="hero-copy">
+        <span class="eyebrow">Edição de Cinema no Lightroom</span>
+        <h1>A edição é onde a sua identidade <em>aparece primeiro.</em></h1>
+        <p class="hero-sub">As aulas de edição da Formação Poesia Visual, agora num curso separado. Você vê o Felipe tratar as próprias fotos, do arquivo cru até a imagem com cara de cena de filme.</p>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <div class="ba">
+        <img src="assets/antes-2.jpg" alt="Foto de casamento sem edição">
+        <div class="ba-after"><img src="assets/depois-2.jpg" alt="A mesma foto editada pelo Felipe Pick"></div>
+        <span class="ba-tag l">Cru</span><span class="ba-tag r">Edição do Felipe</span>
+        <span class="ba-line"></span><span class="ba-knob">⇆</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+      </div>
+      <p class="ba-hint">arrasta pra comparar ⇆</p>
+    </div>
+
+    <div class="cta-block hero-cta">
+      <a class="btn-primary" id="cta-hero" href="#preco">
+        Quero editar com intenção <span class="preco">· R$197</span>
+      </a>
+      <div class="badges">
+        <span class="badge">📸 Garantia 7 dias</span>
+        <span class="badge">🎬 Acesso imediato</span>
+        <span class="badge">🎞️ 7 aulas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DOBRA 2 · PROVA ═══ -->
+<section class="prova">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow">📸 Do arquivo cru à cena</span>
+      <h2>A mesma foto. O que muda é <em>a decisão por trás de cada cor.</em></h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba">
+        <img src="assets/antes-1.jpg" alt="Foto de casamento sem edição" loading="lazy">
+        <div class="ba-after"><img src="assets/depois-1.jpg" alt="A mesma foto editada pelo Felipe Pick" loading="lazy"></div>
+        <span class="ba-tag l">Cru</span><span class="ba-tag r">Edição do Felipe</span>
+        <span class="ba-line"></span><span class="ba-knob">⇆</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+      </div>
+      <div class="ba">
+        <img src="assets/antes-3.jpg" alt="Retrato ao pôr do sol sem edição" loading="lazy">
+        <div class="ba-after"><img src="assets/depois-3.jpg" alt="O mesmo retrato editado pelo Felipe Pick" loading="lazy"></div>
+        <span class="ba-tag l">Cru</span><span class="ba-tag r">Edição do Felipe</span>
+        <span class="ba-line"></span><span class="ba-knob">⇆</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+      </div>
+    </div>
+
+    <div class="head center coment-head">
+      <span class="eyebrow">💬 O que as pessoas sentem</span>
+      <h2>Quando a edição tem intenção, quem olha <em>sente antes de entender.</em></h2>
+    </div>
+    <div class="coment-list">
+      <div class="coment-card"><img src="assets/comentario-4.png" alt="Comentário: Essa claridade nas fotos me lembra a fotografia dos filmes de Antes do Amanhecer" loading="lazy"></div>
+      <div class="coment-card"><img src="assets/comentario-5.png" alt="Comentário: Arte com identidade, seu trabalho é diferenciado" loading="lazy"></div>
+      <div class="coment-card"><img src="assets/comentario-7.png" alt="Comentário: cinema absoluto" loading="lazy"></div>
+      <div class="coment-card"><img src="assets/comentario-6.png" alt="Comentário: parece um sonho ao vivo e em cores" loading="lazy"></div>
+      <div class="coment-card"><img src="assets/comentario-8.png" alt="Comentário: Suas fotos sempre me deixam sem palavras" loading="lazy"></div>
+      <div class="coment-card"><img src="assets/comentario-3.png" alt="Comentário: A beleza dessas fotos" loading="lazy"></div>
+    </div>
+    <div class="depo-list">
+      <div class="depo-card"><img src="assets/comentario-10.png" alt="Mensagem de fotógrafa sobre a edição do Felipe" loading="lazy"></div>
+      <div class="depo-card"><img src="assets/comentario-11.png" alt="Mensagem de fotógrafo que testou a edição do Felipe num ensaio gestante" loading="lazy"></div>
+    </div>
+    <p class="prova-note">Comentários reais nas fotos do Felipe e mensagens de fotógrafos que usam a edição dele.</p>
+  </div>
+</section>
+
+<!-- ═══ DOBRA 3 · DORES ═══ -->
+<section class="dores dark">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow">Isso te soa familiar?</span>
+      <h2>Talvez isso passe pela sua cabeça <em>quando você abre o Lightroom</em></h2>
+    </div>
+    <div class="quote-list">
+      <div class="quote-item"><p>Edito, edito, e no fim a foto parece de qualquer fotógrafo.</p></div>
+      <div class="quote-item"><p>Comprei preset, e em metade das fotos ele simplesmente não funciona.</p></div>
+      <div class="quote-item"><p>Cada ensaio sai com uma cor diferente. Meu feed não parece meu.</p></div>
+      <div class="quote-item"><p>Sei onde fica cada controle, mas não sei por que estou mexendo nele.</p></div>
+      <div class="quote-item"><p>Passo horas numa foto e ainda não fico satisfeito.</p></div>
+      <div class="quote-item"><p>Vejo uma foto com cara de filme e não faço ideia de como chegar lá.</p></div>
+      <div class="quote-item"><p>Será que falta equipamento, ou falta olhar?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DOBRA 4 · DIAGNÓSTICO ═══ -->
+<section class="diagnostico">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow">🎞️ Diagnóstico</span>
+      <h2>O problema não é o seu Lightroom, nem a sua câmera. <em>É editar sem saber o que a foto quer dizer.</em></h2>
+    </div>
+    <div class="diag-list">
+      <div class="diag-item">
+        <span class="diag-num">01</span>
+        <h3 class="diag-name">A Muleta do Preset</h3>
+        <p>Preset resolve a foto de outra pessoa, com outra luz. Na sua, às vezes funciona, às vezes não, e você não sabe por quê. A edição fica emprestada.</p>
+      </div>
+      <div class="diag-item">
+        <span class="diag-num">02</span>
+        <h3 class="diag-name">O Controle Sem Porquê</h3>
+        <p>Você aprendeu onde fica cada controle, não pra que serve cada escolha. Aí mexe por tentativa e erro, e cada foto vira um recomeço.</p>
+      </div>
+      <div class="diag-item">
+        <span class="diag-num">03</span>
+        <h3 class="diag-name">A Cor que Apaga a Identidade</h3>
+        <p>Quando a cor não conversa com a história do ensaio, a foto fica bonita e genérica. E foto genérica se compara por preço.</p>
+      </div>
+    </div>
+    <p class="diag-close">E dá pra editar <span>de outro jeito.</span></p>
+  </div>
+</section>
+
+<!-- ═══ DOBRA 5 · SOLUÇÃO ═══ -->
+<section class="solucao">
+  <div class="wrap solucao-grid">
+    <div class="solucao-photo"><img src="assets/casal-danca.jpg" alt="Casal em ensaio editado pelo Felipe Pick" loading="lazy"></div>
+    <div>
+      <div class="head">
+        <span class="eyebrow">🎬 Como o curso funciona</span>
+        <h2>Edição de Cinema <em>no Lightroom</em></h2>
+      </div>
+      <p class="solucao-intro">São as mesmas aulas de edição que os alunos da Formação Poesia Visual assistem, agora num curso só delas. Não é uma lista de controles. É o jeito que o Felipe pensa luz, cor e atmosfera a serviço da história que o ensaio conta.</p>
+      <p class="solucao-lead">E funciona em 4 passos.</p>
+      <ol class="step-list">
+        <li class="step-item"><span class="step-badge">1</span><div><div class="step-name">Acesse na hora</div><p>Confirmou a compra, as 7 aulas já estão na área de membros da Hotmart.</p></div></li>
+        <li class="step-item"><span class="step-badge">2</span><div><div class="step-name">Veja a edição acontecendo</div><p>O Felipe trata as próprias fotos na tela, do cru até a imagem final, explicando cada escolha.</p></div></li>
+        <li class="step-item"><span class="step-badge">3</span><div><div class="step-name">Entenda o porquê</div><p>Máscara, efeito Orton, cor e contraste deixam de ser botão e viram decisão de linguagem.</p></div></li>
+        <li class="step-item"><span class="step-badge">4</span><div><div class="step-name">Pratique e leve pro seu fluxo</div><p>Os exercícios fixam o olhar, e o fluxo de trabalho leva isso pro seu próximo ensaio.</p></div></li>
+      </ol>
+      <a href="#preco" class="btn-primary" id="cta-solucao">Quero editar com intenção</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DOBRA 6 · O QUE RECEBE ═══ -->
+<section class="recebe dark">
+  <div class="wrap recebe-grid">
+    <div>
+      <div class="head">
+        <span class="eyebrow">O que você recebe</span>
+        <h2>As <em>7 aulas</em> do curso</h2>
+      </div>
+      <ol class="aula-list">
+        <li><span class="aula-num">01</span><div><div class="aula-name">Vale a pena comprar preset?</div><p>Quando o preset ajuda, quando atrapalha e como usar sem perder a sua cara.</p></div></li>
+        <li><span class="aula-num">02</span><div><div class="aula-name">Lightroom</div><p>As ferramentas que importam pra quem edita com intenção, sem decorar painel.</p></div></li>
+        <li><span class="aula-num">03</span><div><div class="aula-name">Como usar as máscaras</div><p>Luz e cor onde a história pede, sem mexer na foto inteira.</p></div></li>
+        <li><span class="aula-num">04</span><div><div class="aula-name">Como fazer efeito Orton</div><p>O brilho suave que dá atmosfera de sonho à cena.</p></div></li>
+        <li><span class="aula-num">05</span><div><div class="aula-name">Fluxo de trabalho</div><p>Do cartão de memória à entrega, sem perder horas em cada ensaio.</p></div></li>
+        <li><span class="aula-num">06</span><div><div class="aula-name">Combinando ferramentas</div><p>Como as escolhas se somam até a foto ganhar cara de filme.</p></div></li>
+        <li><span class="aula-num">07</span><div><div class="aula-name">Exercícios de tratamento de imagem</div><p>Pra praticar e fixar o olhar.</p></div></li>
+      </ol>
+    </div>
+    <div class="capa-card"><img src="assets/capa.jpg" alt="Capa do curso Edição de Cinema no Lightroom" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ═══ DOBRA 7 · PRA QUEM É ═══ -->
+<section class="publico">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow">📷 Para quem é</span>
+      <h2>Esse curso é <em>pra você?</em></h2>
+    </div>
+    <div class="publico-columns">
+      <div class="publico-group yes">
+        <div class="publico-label">É pra você se</div>
+        <ul class="publico-list">
+          <li><span class="pub-icon">✓</span><span>Você já fotografa e sente que a edição ainda não tem a sua cara.</span></li>
+          <li><span class="pub-icon">✓</span><span>Você usa preset e não sabe ajustar quando a luz muda.</span></li>
+          <li><span class="pub-icon">✓</span><span>Cada ensaio seu sai com uma cor diferente.</span></li>
+          <li><span class="pub-icon">✓</span><span>Você quer foto com cara de cena de filme, com intenção e não por sorte.</span></li>
+          <li><span class="pub-icon">✓</span><span>Você quer parar de passar horas em cada foto.</span></li>
+        </ul>
+      </div>
+      <div class="publico-group no">
+        <div class="publico-label">Não é pra você se</div>
+        <ul class="publico-list">
+          <li><span class="pub-icon">✕</span><span>Você quer um preset que resolva tudo sem pensar.</span></li>
+          <li><span class="pub-icon">✕</span><span>Você não usa Lightroom e não pretende usar.</span></li>
+          <li><span class="pub-icon">✕</span><span>Você acha que edição é só deixar a foto bonita.</span></li>
+          <li><span class="pub-icon">✕</span><span>Você já é aluno da Formação Poesia Visual: essas aulas já estão lá.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="publico-close">Se você se viu em pelo menos 2 desses, o curso é pra você.</p>
+  </div>
+</section>
+
+<!-- ═══ DOBRA 8 · ANCORAGEM ═══ -->
+<section class="ancoragem" id="preco">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow">Recapitulando</span>
+      <h2>Tudo que você <em>vai receber</em></h2>
+    </div>
+    <div class="anchor-card">
+      <div class="anchor-items">
+        <div class="anchor-row"><span>🎬 7 aulas de edição no Lightroom</span><span class="anchor-price">✓</span></div>
+        <div class="anchor-row"><span>🖼️ Exercícios de tratamento de imagem</span><span class="anchor-price">✓</span></div>
+        <div class="anchor-row"><span>🎞️ O fluxo de trabalho do Felipe</span><span class="anchor-price">✓</span></div>
+        <div class="anchor-row"><span>📸 Garantia de 7 dias</span><span class="anchor-price">✓</span></div>
+        <div class="anchor-total"><span>Dentro da Formação Poesia Visual</span><span class="anchor-price">R$ 997</span></div>
+      </div>
+      <div class="anchor-offer">
+        <p class="no-pay">Até agora, essas aulas só existiam dentro da Formação.</p>
+        <p class="from-to">Agora, num curso só delas, por</p>
+        <p class="price-big"><span>R$</span>197</p>
+        <p class="discount">À vista ou <strong>parcelado no cartão</strong>.</p>
+        <div class="cta-block center">
+          <a class="btn-primary js-checkout" id="cta-checkout-preco" href="#preco" target="_blank" rel="noopener">Quero editar com intenção</a>
+          <div class="badges">
+            <span class="badge">📸 Garantia 7 dias</span>
+            <span class="badge">🎬 Acesso imediato</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DOBRA 9 · HISTÓRIA ═══ -->
+<section class="historia">
+  <div class="wrap historia-grid">
+    <div>
+      <div class="head">
+        <span class="eyebrow">🎞️ Por que esse curso existe</span>
+        <h2>A pergunta que <em>eu mais ouço</em></h2>
+      </div>
+      <div class="historia-text">
+        <p>Desde que comecei a levar a linguagem do cinema pros meus ensaios, a pergunta que mais chega é a mesma: como você faz pra foto parecer cena de filme? A resposta passa pela direção, mas a edição sempre foi a parte central dela.</p>
+        <p>Por muito tempo essas aulas ficaram só dentro da Formação Poesia Visual. Separei num curso porque muita gente já dirige bem, já tem cliente, e o que falta é a foto final ter a cara de quem fotografou.</p>
+      </div>
+      <div class="escolha-list">
+        <div class="escolha-card no">
+          <div class="escolha-head"><span class="escolha-mark">✕</span><span class="escolha-label">Continuar editando no escuro</span></div>
+          <p>Testar preset atrás de preset. Cada ensaio com uma cor. Horas em cada foto e um portfólio que podia ser de qualquer um.</p>
+        </div>
+        <div class="escolha-card yes">
+          <div class="escolha-head"><span class="escolha-mark">✓</span><span class="escolha-label">Editar com intenção por R$197</span></div>
+          <p>Entender o porquê de cada escolha. Um jeito seu de tratar luz e cor, um fluxo que poupa tempo e <strong>fotos que as pessoas reconhecem antes de ver o nome.</strong></p>
+        </div>
+      </div>
+      <p class="callout">Técnica todo mundo aprende. O que faz um fotógrafo ser escolhido é a identidade, e a edição é onde ela aparece primeiro.</p>
+    </div>
+    <div class="historia-photo"><img src="assets/rio.jpg" alt="Rio ao entardecer, foto editada pelo Felipe Pick" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ═══ DOBRA 10 · BIO ═══ -->
+<section class="bio dark">
+  <div class="wrap bio-grid">
+    <div class="bio-photo"><img src="assets/felipe.jpg" alt="Felipe Pick fotografando" loading="lazy"></div>
+    <div>
+      <span class="eyebrow">O professor</span>
+      <h2 class="bio-name">Felipe Pick</h2>
+      <div class="bio-role">Sua história em cenas de filme</div>
+      <div class="bio-body">
+        <p>Tenho 24 anos e sou fotógrafo especializado em <strong>ensaios de casal, família e casamentos com identidade cinematográfica.</strong></p>
+        <p>Desde pequeno assistia até 3 filmes por dia. Quando comecei a fotografar, fui naturalmente levando as técnicas e a linguagem do cinema para os meus ensaios, até que as pessoas começaram a me perguntar como eu fazia pra que minhas fotos <strong>parecessem cenas de filme.</strong></p>
+        <p>A edição sempre foi a parte central dessa resposta.</p>
+        <p class="bio-quote">Neste curso, eu mostro como trato as minhas próprias fotos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DOBRA 11 · FAQ ═══ -->
+<section class="faq">
+  <div class="wrap narrow">
+    <div class="head center">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2>Ainda com <em>alguma dúvida?</em></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>Como vou acessar?</summary><p>Logo depois da compra você recebe o acesso à área de membros da Hotmart, com as 7 aulas.</p></details>
+      <details class="faq-item"><summary>Preciso ter Lightroom?</summary><p>Sim. As aulas são no Lightroom, que é onde o Felipe edita.</p></details>
+      <details class="faq-item"><summary>Serve pra quem está começando a editar?</summary><p>Serve. As aulas partem do porquê de cada escolha, e não de quanto você já sabe de Lightroom.</p></details>
+      <details class="faq-item"><summary>Já tenho os presets do Felipe. Vale a pena?</summary><p>Vale. A primeira aula é justamente sobre quando o preset ajuda e quando atrapalha, e o resto do curso te ensina a ajustar quando a luz muda.</p></details>
+      <details class="faq-item"><summary>Já sou aluno da Formação Poesia Visual. Preciso comprar?</summary><p>Não. Essas aulas já estão na sua área da Formação.</p></details>
+      <details class="faq-item"><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. Se achar que não faz sentido, pede o reembolso dentro desse prazo.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DOBRA 12 · FECHAMENTO ═══ -->
+<section class="fechamento dark">
+  <div class="fechamento-bg"><img src="assets/roma.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <span class="camera-row">📷🎞️📸🎬🖼️</span>
+    <h2>A sua próxima foto pode ter <em>a sua cara.</em></h2>
+    <p class="fechamento-price">Por <strong>R$ 197</strong>, as 7 aulas de edição da Formação Poesia Visual.</p>
+    <div class="cta-block center">
+      <a class="btn-primary js-checkout" id="cta-checkout-final" href="#preco" target="_blank" rel="noopener">
+        Quero editar com intenção <span class="preco">· R$197</span>
+      </a>
+      <div class="badges">
+        <span class="badge">📸 Garantia 7 dias</span>
+        <span class="badge">🎬 Acesso imediato</span>
+        <span class="badge">🎞️ 7 aulas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="page-footer">© Felipe Pick · Edição de Cinema no Lightroom</footer>
+
+<script>
+  // Link do checkout da Hotmart: quando existir, é só preencher aqui.
+  var CHECKOUT = '';
+  if (CHECKOUT) {
+    document.querySelectorAll('.js-checkout').forEach(function (a) { a.href = CHECKOUT; });
+  } else {
+    document.querySelectorAll('.js-checkout').forEach(function (a) { a.removeAttribute('target'); });
+  }
+
+  // Antes e depois arrastável
+  document.querySelectorAll('.ba').forEach(function (ba) {
+    var r = ba.querySelector('input[type=range]');
+    function set() { ba.style.setProperty('--pos', r.value + '%'); }
+    r.addEventListener('input', set); set();
+  });
+</script>
+</body>
+</html>
